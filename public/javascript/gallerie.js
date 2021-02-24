@@ -125,7 +125,7 @@ function buildNavigationElement(showObjects, isAll = false) {
 }
 
 async function dynamicImages() {
-  const response = await fetch("/.netlify/functions/server/dynamicImages");
+  const response = await fetch("/.netlify/functions/dynamicImages");
   const data = await response.json();
 
   const lazyloadWrapper = document.querySelector(".lazyload-wrapper");
