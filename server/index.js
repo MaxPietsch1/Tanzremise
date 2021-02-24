@@ -24,7 +24,10 @@ router.post("/", (req, res) => res.json({ postBody: req.body }));
 // BODY-PARSER
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use("/.netlify/functions/server", router);
+app.use("/.netlify/functions/server", router);
+app.use("/", (req, res) =>
+  res.sendFile(path.join(__dirname, "../public/index.html"))
+);
 
 // Dynamic Image Endpoint
 const imagesEndpoint = [];
