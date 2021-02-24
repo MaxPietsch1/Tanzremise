@@ -208,6 +208,7 @@
           }
           .price-time {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             .show-price {
               font-size: 16px;
