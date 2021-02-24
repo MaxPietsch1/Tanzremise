@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
-const glob = require("glob");
 const fs = require("fs");
+const cors = require("cors");
 
 // BODY-PARSER
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 // Local server
 const port = 8000;
