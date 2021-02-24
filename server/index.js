@@ -1,12 +1,8 @@
 const express = require("express");
+const serverless = require("serverless-http");
 const app = express();
-const glob = require("glob");
 const fs = require("fs");
-
-// BODY-PARSER
 const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
 
 // Local server
 const port = 8000;
@@ -14,6 +10,21 @@ app.listen(port, () => {
   console.log(`Running on localhost: ${port}`);
 });
 app.use(express.static("public"));
+
+// Setup server for Netlify
+const router = express.Router();
+router.get("/", (req, res) => {
+  res.writeHead(200, { "Content-Type:": "text/html" });
+  res.write("<h1>Hello from Express server</h1>");
+  res.end();
+});
+router.get("/another", (req, res) => res.json({ route: req.originalUrl }));
+router.post("/", (req, res) => res.json({ postBody: req.body }));
+
+// BODY-PARSER
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use("/.netlify/functions/server", router);
 
 // Dynamic Image Endpoint
 const imagesEndpoint = [];
@@ -42,31 +53,10 @@ function buildImagesEndpoint() {
       imagesEndpoint.push(showObj);
     });
   });
-  console.log(imagesEndpoint);
+  // console.log(imagesEndpoint);
 }
 
 buildImagesEndpoint();
-// console.log(imagesEndpoint);
 
-// // glob, access folders
-// const getDirectories = function (src, callback) {
-//   glob(src + "/*", callback);
-// };
-// getDirectories("public/images", function (err, res) {
-//   if (err) {
-//     console.log("Error", err);
-//   } else {
-//     // console.log(res[0]);
-//     const showObj = {
-//       title: res[0].replace("public/images/", "").replace("_", " "),
-//       imgArray: [],
-//     };
-//     glob(res[0] + "/*", function (err, res) {
-//       // console.log(res);
-//       showObj.imgArray = res;
-//     });
-//     // console.log(showObj);
-//     imagesEndpoint.push(showObj);
-//     console.log("imagesEndpoint", imagesEndpoint);
-//   }
-// });
+module.exports = app;
+module.exports.handler = serverless(app);
