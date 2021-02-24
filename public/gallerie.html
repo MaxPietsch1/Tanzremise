@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/e55b5d4045.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Tanzremize</title>
+  </head>
+
+  <body>
+    <div class="background-nav"></div>
+    <!-- <span class="nav-txt noBackground">Tanzremise</span> -->
+    <!-- <span class="nav-infront-txt"></span> -->
+
+    <nav class="gallery-nav">
+      <div class="logo">
+        <a href="./index.html"><img src="./images/logo.png" alt="" /></a>
+      </div>
+      <ul class="nav-links" id="gallery-links">
+        <li><a href="./index.html">HOME</a></li>
+        <li><a href="./aktuelles.html">Aktuelles</a></li>
+        <li><a href="./ensemble.html">Ensemble</a></li>
+        <li><a href="#">Gallerie</a></li>
+        <li><a href="./eswareinmal.html">Es War Einmal...</a></li>
+        <li><a href="./kontakt.html">Kontakt</a></li>
+      </ul>
+
+      <div class="burger">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+    <div class="to-top"><i class="fas fa-angle-up"></i></div>
+
+    <!-- Keep on working on the lazy load -->
+    <!-- add 1 more column images, div -->
+    <section class="lazy-gallery">
+      <div class="hero-gallery">
+        <div class="hero-background">
+          <div class="hero-content">
+            <div class="hero-header">
+              <h2>
+                Tanzremise <br />
+                Foto <br />
+                Gallerie
+              </h2>
+              <h3>Fotos durch die Zeit</h3>
+            </div>
+            <div class="scroll-overflow">
+              <!-- START -->
+              <!-- Opens the full lazy-navbar -->
+              <!-- <div class="arrow-menu">
+            <p class="open-close">Open</p>
+            <p class="arrow-right">➤</p>
+          </div> -->
+              <!-- ENDS -->
+
+              <div class="dropdown">
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide"
+                    >&nbsp;&nbsp;all&nbsp;&nbsp;</span
+                  >
+                  <div class="dropdown-content all">
+                    <a href="#wwry">We will rock you</a>
+                    <a href="#miami-dance">Miami Dance</a>
+                    <a href="#das-biest">Schöne und das Biest</a>
+                    <a href="#jazz-and-jail">Jazz and Jail</a>
+                    <a href="#miami-nights">Miami Nights</a>
+                    <a href="#welcome">Welcome</a>
+                    <a href="#piraten">Piraten</a>
+                    <a href="#vampire">Vampire</a>
+                    <a href="#hofnarr">Hofnarr</a>
+                    <a href="#nyn">NYN</a>
+                    <a href="#mumie">Mumie</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2006</span>
+                  <div class="dropdown-content">
+                    <a href="#wwry">We will rock you</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2007</span>
+                  <div class="dropdown-content">
+                    <a href="#miami-dance">Miami Dance</a>
+                    <a href="#das-biest">Schöne und das Biest</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2008</span>
+                  <div class="dropdown-content">
+                    <a href="#jazz-and-jail">Jazz and Jail</a>
+                    <a href="#miami-nights"> Miami Nights </a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide" href="#nine"
+                    >2009</span
+                  >
+                  <div class="dropdown-content">
+                    <a href="#welcome">Welcome</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2011</span>
+                  <div class="dropdown-content">
+                    <a href="#piraten">Piraten</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2013</span>
+                  <div class="dropdown-content">
+                    <a href="#vampire">Vampire</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2015</span>
+                  <div class="dropdown-content">
+                    <a href="#hofnarr">Hofnarr</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2017</span>
+                  <div class="dropdown-content">
+                    <a href="#nyn">NYN</a>
+                  </div>
+                </div>
+
+                <div class="dropdown-wrapper">
+                  <span class="header-hover" id="header-hover-wide">2019</span>
+                  <div class="dropdown-content">
+                    <a href="#mumie">Mumie</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <ul class="lazy-nav">
+            <li>
+              <a href="#six">2006</a> <br />
+              <span>
+                <a href="#wwry" id="wwry">We will rock you</a>
+              </span>
+            </li>
+            <li>
+              <a href="#seven">2007</a>
+              <br />
+              <span>
+                <a href="#miami-dance">Miami Dance</a>
+                <br />
+                <a href="#das-biest" id="das-biest">Schöne und das Biest</a>
+              </span>
+            </li>
+            <li>
+              <a href="#eight">2008</a>
+              <br />
+              <span>
+                <a href="#jazz-and-jail">Jazz and Jail</a>
+                <br />
+                <a href="#miami-nights"> Miami Nights </a>
+              </span>
+            </li>
+            <li>
+              <a href="#nine">2009</a>
+              <br />
+              <span>
+                <a href="#welcome">Welcome</a>
+              </span>
+            </li>
+            <li>
+              <a href="#eleven">2011</a>
+              <br />
+              <span>
+                <a href="#piraten">Piraten</a>
+              </span>
+            </li>
+            <li>
+              <a href="#thirteen">2013</a>
+              <br />
+              <span> <a href="#vampire">Vampire</a></span>
+            </li>
+            <li>
+              <a href="#fithteen">2015</a>
+              <br />
+              <span>
+                <a href="#hofnarr">Hofnarr</a>
+              </span>
+            </li>
+            <li>
+              <a href="#seventeen">2017</a>
+              <br />
+              <span>
+                <a href="#nyn">NYN</a>
+              </span>
+            </li>
+            <li>
+              <a href="#nineteen">2019</a>
+              <br />
+              <span>
+                <a href="#mumie">Mumie</a>
+              </span>
+            </li>
+          </ul> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lazyload-wrapper">
+        <!-- <div class="images-dynamically"></div>
+        <div class="lazy-images-wrapper lazy-six">
+          <h3 id="six">2006</h3>
+          <p id="wwry">We will rock you</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img src="./images/bluesky.jpg" alt="" />
+              <img src="./images/img2.jpg" alt="" />
+              <img src="./images/img3.jpg" alt="" />
+              <img src="./images/img7.jpg" alt="" />
+              <img src="./images/bluesky.jpg" alt="" />
+              <img src="./images/img2.jpg" alt="" />
+              <img src="./images/img3.jpg" alt="" />
+              <img src="./images/img7.jpg" alt="" />
+              <img src="./images/bluesky.jpg" alt="" />
+              <img src="./images/img2.jpg" alt="" />
+              <img src="./images/img3.jpg" alt="" />
+              <img src="./images/img7.jpg" alt="" />
+              <img src="./images/bluesky.jpg" alt="" />
+              <img src="./images/img2.jpg" alt="" />
+              <img src="./images/img3.jpg" alt="" />
+              <img src="./images/img7.jpg" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-seven">
+          <h3 id="seven">2007</h3>
+          <p id="miami-dance">Miami Dance</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-seven">
+          <p class="show-alone" id="das-biest">Schöne und das Biest</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-eight">
+          <h3 id="eight">2008</h3>
+          <p id="jazz-and-jail">Jazz and Jail</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img7.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-eight">
+          <p class="show-alone" id="miami-nights">Miami Nights</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-nine">
+          <h3 id="nine">2009</h3>
+          <p id="welcome">Welcome</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-eleven">
+          <h3 id="eleven">2011</h3>
+          <p id="piraten">Piraten</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-thirteen">
+          <h3 id="thirteen">2013</h3>
+          <p id="vampire">Vampire</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-fifthteen">
+          <h3 id="fifthteen">2015</h3>
+          <p id="hofnarr">Hofnarr</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-seventeen">
+          <h3 id="seventeen">2017</h3>
+          <p id="nyn">NYN</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="lazy-images-wrapper lazy-nineteen">
+          <h3 id="nineteen">2019</h3>
+          <p id="mumie">Mumie</p>
+          <div class="images-wrapper">
+            <div class="lazy-images">
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img6.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img4.jpg"
+                alt=""
+              />
+              <img
+                class="lazy"
+                id="lazy-id"
+                data-src="./images/img5.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer-wrapper">
+        <h3>Tanzremise</h3>
+        <a href="https://www.facebook.com/Tanzremise" target="_blank"
+          >Facebook</a
+        >
+        <a
+          href="https://www.instagram.com/tanzremise_neustrelitz/"
+          target="_blank"
+          >Instagram</a
+        >
+        <a href="">Impressum & shuütz</a>
+      </div>
+    </footer>
+
+    <script src="javascript/lazyLoading.js"></script>
+    <script src="javascript/gallerie.js "></script>
+    <script src="javascript/app.js "></script>
+  </body>
+</html>

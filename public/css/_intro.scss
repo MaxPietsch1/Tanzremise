@@ -1,0 +1,335 @@
+.body-intro {
+  background: rgb(14, 14, 14);
+}
+
+// .body-intro .to-top {
+//   display: flex;
+//   // align-items: center;
+//   justify-content: center;
+//   border: 2px solid rgb(255, 255, 255);
+//   border-radius: 1rem;
+//   // background: none;
+//   position: fixed;
+//   bottom: 5vh;
+//   right: 2vh;
+//   height: 35px;
+//   width: 35px;
+//   padding-top: 6px;
+//   z-index: 10;
+//   opacity: 0;
+//   font-size: 18px;
+// }
+
+/* BANNER start */
+.header-banner {
+  // height: 130vh;
+  padding: 7vh 3% 0 3%;
+  // display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+  background: rgb(14, 14, 14);
+}
+
+// Header text
+.banner-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  padding-top: 10vh;
+  // z-index: -2 !important;
+
+  h1 {
+    font-family: "Dancing Script";
+    // font-size: $header1;
+    font-size: 42px;
+    text-align: center;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px rgb(0, 0, 0), 1px 1px 10px rgba(0, 0, 0, 0.587);
+  }
+}
+
+// arrow down
+#arrow-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20vh;
+  margin-bottom: 10vh;
+  pointer-events: none;
+
+  img {
+    height: 100%;
+    // width: 100%;
+    object-fit: contain;
+  }
+}
+
+.banner {
+  height: 350px;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+
+  .banner-img {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    max-width: 1100px;
+    animation: slider 80s linear 1.5s infinite alternate;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+/* Header-banner end */
+
+@keyframes slider {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-500%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* WERBUNG start */
+
+.index-main {
+  // background-color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 50vh;
+  max-width: 1100px;
+  margin: 70vh auto 0 auto;
+  z-index: 10 !important;
+
+  h2 {
+    font-size: 2.4rem;
+    text-align: center;
+    padding: 3rem 0rem;
+    font-weight: normal;
+  }
+
+  .banner-rightside {
+    margin-left: auto;
+  }
+  .werbung-banners {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 0 3%;
+    max-width: 1100px;
+
+    .werbung-banner {
+      min-width: 200px;
+      max-width: 350px;
+      margin-bottom: 30vh;
+      // border-radius: 2ch;
+
+      .werbung-img {
+        position: relative;
+        height: 350px;
+
+        img {
+          // border-top-left-radius: 2ch;
+          // border-top-right-radius: 2ch;
+          border-radius: 2px;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .back-img-text {
+          position: fixed;
+          bottom: 50%;
+          left: 50%;
+
+          transform: translate(-50%, 50%);
+          // font-size: 80px;
+          font-size: calc(3rem + 10vw);
+          line-height: 70px;
+          opacity: 0.1;
+          text-align: right;
+          font-family: "Dancing Script", cursive;
+          // letter-spacing: 25px;
+          z-index: -1;
+        }
+      }
+
+      .werbung-wrapper {
+        display: flex;
+        flex-direction: column;
+        // margin: auto;
+
+        width: 275px;
+        .werbung-title {
+          h3 {
+            font-size: 38px;
+            font-weight: 400;
+            font-family: "Danceing Script", cursive;
+          }
+        }
+
+        .werbung-info {
+          display: flex;
+          flex-direction: column;
+
+          h4 {
+            font-size: 18px;
+            // font-weight: 300;
+            color: rgb(250, 250, 250);
+          }
+
+          // p {
+          //   font-size: 16px;
+          //   padding-top: 3px;
+          //   color: rgb(255, 255, 255);
+          // }
+
+          .show-address {
+            font-size: 16px;
+          }
+          .show-date {
+            font-size: 32px;
+            font-weight: bolder;
+            letter-spacing: 4px;
+          }
+          .price-time {
+            display: flex;
+            justify-content: space-between;
+            .show-price {
+              font-size: 16px;
+            }
+            .show-time {
+              font-size: 16px;
+              padding-right: 10px;
+            }
+          }
+          .show-kontakt-btn {
+            margin: 10px 10px 0 0;
+            padding: 5px;
+            background: $primal-color2;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.592);
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer-links {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background: rgb(14, 14, 14);
+  border-top: 7px solid black;
+}
+.footer-links-header {
+  h3 {
+    text-align: center;
+    padding: 5vh 3%;
+    font-size: 40px;
+  }
+}
+
+.footer-link {
+  // height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 10vh;
+  .kontakt-bottom-btn {
+    border: none;
+    margin: 2vh 0;
+    a {
+      padding: 5px;
+      display: block;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+/* WERBUNG end */
+
+// Add javascript
+
+@media screen and (min-width: 600px) {
+  // #nav-txt {
+  //   position: fixed;
+  // }
+  .banner-text {
+    h1 {
+      display: block;
+      font-size: 80px;
+      line-height: 60px;
+    }
+  }
+  .back-img-text {
+    // font-size: 100px;
+    letter-spacing: 25px;
+    line-height: 100px !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .banner {
+    #banner-img {
+      animation: sliderMini 50s linear 1.5s infinite alternate;
+      img {
+        max-width: 50%;
+      }
+    }
+    .banner-text {
+      h1 {
+        font-size: 10rem;
+      }
+    }
+  }
+}
+
+// detta???????? 250%?
+@keyframes sliderMini {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+// media queries
+@media screen and (min-width: 1500px) {
+  .back-img-text {
+    line-height: 150px !important;
+    font-size: 180px !important;
+    font-size: 160px;
+  }
+}

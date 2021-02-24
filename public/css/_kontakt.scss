@@ -1,0 +1,165 @@
+// Testing new design
+
+.contact-container {
+  margin-top: -1px;
+  height: 92vh;
+}
+.top-img-wrapper {
+  h1 {
+    font-family: "Dancing Script", cursive;
+    font-size: header1b;
+    color: rgb(255, 255, 255);
+    opacity: 0.5;
+  }
+  background: linear-gradient(rgba(130, 130, 130, 0.7)),
+    url("../images/man-on-stage.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 25vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // padding: 0 3%;
+  height: 10vh;
+  background: rgb(33, 33, 33);
+  background: $primal-color;
+  z-index: 10;
+  width: 100vw;
+  .contact-info-wrapper {
+    position: relative;
+    // width: 30rem;
+    margin: auto;
+    // border: 1px solid white;
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      font-weight: bolder;
+      padding: 5px 0;
+      background: none;
+      color: white;
+      font-size: 20px;
+      outline: none;
+      margin: 5px 0;
+      border: none;
+      h2 {
+        font-size: 24px;
+      }
+      &:hover {
+        color: rgb(33, 33, 33);
+      }
+    }
+    .fa-angle-right {
+      transition: all 0.3s ease;
+      margin-right: 5px;
+    }
+  }
+}
+
+.contact-information {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  height: 0vh;
+  width: 100%;
+  opacity: 0;
+  border-left: 5px solid rgb(33, 33, 33);
+  border-right: 5px solid rgb(33, 33, 33);
+  font-weight: normal;
+  border-radius: 2ch;
+  transition: all 0.5s ease;
+
+  background-color: $primal-color;
+  p {
+    border-radius: 2ch;
+    background: rgb(215, 54, 54);
+    padding: 10px 3%;
+    font-size: 14px;
+    text-shadow: 0px 0px 1px black;
+  }
+  a {
+    font-size: 14px;
+    color: rgb(182, 245, 255);
+    letter-spacing: 1px;
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+// .contact-footer {
+//   background: black;
+// }
+
+// Add JavaScript
+.contact-wrapper-active {
+  overflow: unset;
+}
+
+.contact-information-active {
+  height: 20vh;
+  transition: all 0.5s ease;
+  opacity: 1;
+
+  // transform: translateY(-10px);
+}
+
+.contact-pointer-active {
+  transform: rotate(90deg);
+  transition: all 0.3s ease;
+  color: rgb(33, 33, 33);
+}
+
+.button-active {
+  color: rgb(33, 33, 33);
+}
+
+.bottom-img-wrapper {
+  height: 50vh;
+  // height: 100%;
+  display: flex;
+  img {
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .contact-wrapper {
+    .contact-info-wrapper {
+      width: 500px;
+      h2 {
+        font-size: 2.4rem;
+      }
+      button {
+        font-size: 32px;
+        margin: 5px 0;
+      }
+    }
+    .info {
+      display: flex;
+    }
+  }
+  .contact-information {
+    text-align: start;
+    p {
+      padding: 10px 0 10px 5%;
+      font-size: 16px;
+    }
+    a {
+      font-size: 16px;
+    }
+  }
+}

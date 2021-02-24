@@ -1,0 +1,190 @@
+// font-family: 'Lato', sans-serif;
+// font-family: 'roboto', sans-serif;
+// font-family: 'Dancing Script', cursive;
+// font-family: 'Montserrat', sans-serif;
+
+// global styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Montserrat", sans-serif;
+  // background-color: rgb(10, 0, 0);
+  overflow-x: hidden;
+}
+
+body {
+  color: white;
+  overflow-x: hidden;
+}
+
+h2,
+h3,
+h4,
+p,
+button {
+  font-family: "Montserrat", sans-serif;
+}
+
+// Nav text
+.nav-txt {
+  color: white;
+  width: 100vw;
+  padding: 3.5vh 0 8vh 0;
+  background: rgb(14, 14, 14);
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%, 0);
+  text-align: center;
+  height: 10vh;
+  font-family: "Dancing Script", cursive;
+  font-size: 32px;
+  z-index: 2;
+}
+
+.noBackground {
+  background: rgba(0, 0, 0, 0.274);
+  font-size: 24px;
+}
+// main,
+// .nav-links {
+//   max-width: 1000px;
+//   margin: auto;
+// }
+
+/* NAVBAR start */
+// .logo {
+//   background: #3f3f3f;
+//   padding-left: 3vw;
+
+//   img {
+//     width: 100px;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// }
+
+/* NAVBAR end */
+
+/* To Top button Start*/
+.to-top {
+  display: flex;
+  justify-content: center;
+  border-radius: 1rem;
+  position: fixed;
+  bottom: 5vh;
+  right: 5.5vw;
+  height: 35px;
+  width: 35px;
+  z-index: 10;
+  opacity: 0;
+  font-size: 18px;
+  mix-blend-mode: difference;
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(224, 224, 224);
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .red-top {
+    mix-blend-mode: normal;
+    color: rgb(217, 217, 217);
+    border: 2px solid rgb(212, 212, 212);
+  }
+}
+
+/* To Top button Ends*/
+
+/* FOOTER starts */
+footer {
+  background: rgb(14, 14, 14);
+  border-top: 1px solid rgba(109, 109, 109, 0.349);
+}
+
+.footer-wrapper {
+  min-height: 30vh;
+  // background: #3f3f3f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  flex-wrap: wrap;
+  color: white;
+  padding: 1.5rem 0;
+
+  h3 {
+    font-family: "Dancing Script", cursive;
+    font-size: 2em;
+    margin: 0.5rem 1.5rem;
+    letter-spacing: 3px;
+  }
+
+  a {
+    font-size: $footer-font;
+    margin: 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+/* FOOTER ends */
+
+.stop-scroll {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+// .stop-scroll {
+//   position: fixed;
+//   overflow: hidden;
+// }
+
+// Gallerie stop scroll image not working
+@media screen and(min-width: 600px) {
+  .nav-txt {
+    padding-top: 1vh;
+    height: 7vh;
+  }
+  .nav-infront-txt {
+    // border: 1px solid red;
+    background: rgb(14, 14, 14);
+    width: 100vw;
+    height: 7vh;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+
+  .to-top {
+    &:hover {
+      transform: translateY(2px);
+      transition: all 0.3s ease;
+      color: rgb(0, 0, 0);
+      background: rgb(224, 224, 224);
+    }
+  }
+
+  .red-top {
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
+@media screen and(min-width: 600px) {
+  .footer-wrapper {
+    flex-direction: row;
+    min-height: 7vh;
+    align-items: center;
+  }
+}

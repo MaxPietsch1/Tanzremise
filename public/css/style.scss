@@ -1,0 +1,69 @@
+$header1: calc(4rem + 5vw);
+$header1b: calc(3rem + 2.5vw);
+$header1c: calc(1.8rem + 2vw);
+$header2: calc(1.3rem + 1vw);
+$header3: calc(1.4rem + 0.2vw);
+$paragraph: calc(1.4rem + 0.2vw);
+$p-logo: calc(1rem + 0.5vw);
+
+$nav-font: 14px;
+$footer-font: 1.2rem;
+$primal-color: rgb(202, 52, 52);
+$primal-color2: #941c2f;
+$grey: #3f3f3f;
+$blue: #283350;
+$light-blue: #3fc1c9;
+$yellow: #fce38a;
+$red: #fc5185;
+
+@import "global";
+@import "navbar";
+@import "intro";
+@import "eswareinmal";
+@import "ensemble";
+@import "gallerie";
+// @import "kontakt";
+@import "kontakt2";
+@import "aktuelles";
+
+@media screen and (min-width: 1400px) {
+  h2 {
+    font-size: 2.4rem;
+  }
+  h3 {
+    font-size: 1.6rem;
+  }
+
+  p {
+    font-size: 1.8rem;
+  }
+
+  .ewe-wrapper {
+    h1 {
+      font-size: 5rem;
+    }
+  }
+  .top-img-wrapper {
+    h1 {
+      font-size: 9rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  h1 {
+    font-size: $header1;
+  }
+
+  h2 {
+    font-size: $header2;
+  }
+
+  h3 {
+    font-size: $header3;
+  }
+
+  // p {
+  //   font-size: $paragraph;
+  // }
+}
