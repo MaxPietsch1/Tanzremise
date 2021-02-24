@@ -95,7 +95,7 @@ function addImgElement(imgSrc) {
 // };
 
 async function dynamicImages() {
-  const response = await fetch("http://localhost:8000/dynamicImages");
+  const response = await fetch("/dynamicImages");
   const data = await response.json();
 
   const lazyloadWrapper = document.querySelector(".lazyload-wrapper");
