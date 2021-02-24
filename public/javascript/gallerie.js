@@ -94,6 +94,36 @@ function addImgElement(imgSrc) {
 //   }
 // };
 
+function convertToLinkString(title) {
+  return title.toLowerCase().replace(/\s/g, "-");
+}
+
+function buildNavigationElement(showObjects, isAll = false) {
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownWrapper = document.createElement("div");
+  dropdownWrapper.classList.add("dropdown-wrapper");
+
+  // navigation title
+  const headerHover = document.createElement("span");
+  headerHover.classList.add("header-hover");
+  headerHover.textContent = isAll ? "Alle Shows" : showObjects[0].year;
+  dropdownWrapper.append(headerHover);
+  const dropdownContent = document.createElement("div");
+  dropdownContent.classList.add("dropdown-content");
+  if (isAll) dropdownContent.classList.add("all");
+
+  // subelements
+  showObjects.forEach((showObj) => {
+    const link = document.createElement("a");
+    link.href = "#" + convertToLinkString(showObj.title);
+    link.textContent = showObj.title;
+    dropdownContent.append(link);
+  });
+
+  dropdownWrapper.append(dropdownContent);
+  dropdown.append(dropdownWrapper);
+}
+
 async function dynamicImages() {
   const response = await fetch("/.netlify/functions/server/dynamicImages");
   const data = await response.json();
@@ -115,7 +145,8 @@ async function dynamicImages() {
     .map((so) => so.year)
     .filter((year, index, array) => array.indexOf(year) === index);
 
-  console.log("years", years);
+  buildNavigationElement(data, true);
+
   years.forEach((year) => {
     const lazyImagesWrapper = document.createElement("div");
     lazyImagesWrapper.classList.add("lazy-images-wrapper");
@@ -125,12 +156,17 @@ async function dynamicImages() {
     yearsShow.textContent = year;
     yearsShow.classList.add("year-shows");
     lazyImagesWrapper.append(yearsShow);
+
+    // nav element
+    buildNavigationElement(data.filter((so) => so.year === year));
+
     data
       .filter((so) => so.year === year)
       .forEach((showObj) => {
         // Title
         const title = document.createElement("p");
         title.classList.add("show-alone");
+        title.id = convertToLinkString(showObj.title);
         title.textContent = showObj.title;
         lazyImagesWrapper.append(title);
         const imagesWrapper = document.createElement("div");
@@ -177,6 +213,7 @@ async function dynamicImages() {
   // });
   lazyLoadActivate();
   buildLightBox();
+  addClickEventToNavigation();
 }
 
 dynamicImages();
@@ -232,35 +269,37 @@ function lazyLoadActivate() {
 //   console.log(openClose);
 // });
 
-const lazyNavWrapper = document.getElementsByClassName("dropdown-wrapper");
-const lazyNavContent = document.getElementsByClassName("dropdown-content");
-const lazyNavHeader = document.getElementsByClassName("header-hover");
-const lazyNavHeaderID = document.getElementById("header-hover-wide");
+function addClickEventToNavigation() {
+  const lazyNavWrapper = document.getElementsByClassName("dropdown-wrapper");
+  const lazyNavContent = document.getElementsByClassName("dropdown-content");
+  const lazyNavHeader = document.getElementsByClassName("header-hover");
+  const lazyNavHeaderID = document.getElementById("header-hover-wide");
 
-// Click on the year to activate a dropdownlist. Click on a link or somewhere else to close the dropdownlist
-for (let i = 0; i < lazyNavHeader.length; i++) {
-  // console.log(lazyNavHeader[i]);
-  lazyNavHeader[i].addEventListener("click", () => {
-    lazyNavContent[i].classList.toggle("dropdown-content-active");
-    lazyNavHeader[i].classList.toggle("header-hover-active");
+  // Click on the year to activate a dropdownlist. Click on a link or somewhere else to close the dropdownlist
+  for (let i = 0; i < lazyNavHeader.length; i++) {
+    // console.log(lazyNavHeader[i]);
+    lazyNavHeader[i].addEventListener("click", () => {
+      lazyNavContent[i].classList.toggle("dropdown-content-active");
+      lazyNavHeader[i].classList.toggle("header-hover-active");
 
-    // REMOVE then yearlink toggles propperly
-    const dropdown_a = lazyNavContent[i].getElementsByTagName("a");
-    for (let y = 0; y < dropdown_a.length; y++) {
-      dropdown_a[y].classList.toggle("a-links-active");
+      // REMOVE then yearlink toggles propperly
+      const dropdown_a = lazyNavContent[i].getElementsByTagName("a");
+      for (let y = 0; y < dropdown_a.length; y++) {
+        dropdown_a[y].classList.toggle("a-links-active");
 
-      if (lazyNavContent[i].classList.contains("dropdown-content-active")) {
-        document.body.addEventListener(
-          "click",
-          () => {
-            lazyNavContent[i].classList.remove("dropdown-content-active");
-            lazyNavHeader[i].classList.remove("header-hover-active");
-            dropdown_a[y].classList.remove("a-links-active");
-          },
-          true
-        );
+        if (lazyNavContent[i].classList.contains("dropdown-content-active")) {
+          document.body.addEventListener(
+            "click",
+            () => {
+              lazyNavContent[i].classList.remove("dropdown-content-active");
+              lazyNavHeader[i].classList.remove("header-hover-active");
+              dropdown_a[y].classList.remove("a-links-active");
+            },
+            true
+          );
+        }
       }
-    }
-    //REMOVE
-  });
+      //REMOVE
+    });
+  }
 }
