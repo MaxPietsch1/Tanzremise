@@ -25,9 +25,10 @@ router.post("/", (req, res) => res.json({ postBody: req.body }));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/.netlify/functions/server", router);
-app.use("/", (req, res) =>
-  res.sendFile(path.join(__dirname, "../public/index.html"))
-);
+// If this is here, then Images in Gallery doesnt work
+// app.use("/", (req, res) =>
+//   res.sendFile(path.join(__dirname, "../public/index.html"))
+// );
 
 // Dynamic Image Endpoint
 const imagesEndpoint = [];
