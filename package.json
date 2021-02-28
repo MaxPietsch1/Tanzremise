@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./server/index.js"
+    "build": "node build-script/dynamicImages.js",
+    "start": "npm run build && netlify dev",
+    "deploy": "npm run build && netlify deploy",
+    "publish": "npm run build && netlify deploy --prod"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "netlify-cli": "^3.8.6",
+    "netlify-lambda": "^2.0.3",
+    "serverless-http": "^2.7.0"
   }
 }
