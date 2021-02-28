@@ -31,36 +31,12 @@ app.use("/.netlify/functions/dynamicImages", router);
 // );
 
 // Dynamic Image Endpoint
-const imagesEndpoint = [];
+const imagesEndpoint = require("./data.json");
 
 // GET image names from imagesEndpoint
 // app.get("/dynamicImages", (req, res) => {
 //   res.send(imagesEndpoint);
 // });
-
-function buildImagesEndpoint() {
-  const src = "public/images/gallery";
-
-  const years = fs.readdirSync(src).filter((d) => d !== ".DS_Store");
-  years.forEach((year) => {
-    let shows = fs.readdirSync(src + "/" + year);
-    shows.forEach((show) => {
-      let images = fs.readdirSync(src + "/" + year + "/" + show);
-
-      const showObj = {
-        year: year,
-        title: show.replace(/_/g, " ").slice(1, 22),
-        imgArray: images.map((image) => {
-          return "/images/gallery/" + year + "/" + show + "/" + image;
-        }),
-      };
-      imagesEndpoint.push(showObj);
-    });
-  });
-  // console.log(imagesEndpoint);
-}
-
-buildImagesEndpoint();
 
 module.exports = app;
 module.exports.handler = serverless(app);
