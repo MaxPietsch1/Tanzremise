@@ -81,7 +81,7 @@
     height: 100%;
     width: 100%;
     max-width: 1100px;
-    animation: slider 80s linear 1.5s infinite alternate;
+    animation: slider 30s linear 1.5s infinite alternate;
 
     img {
       width: 100%;
@@ -96,7 +96,7 @@
     transform: translateX(0%);
   }
   50% {
-    transform: translateX(-500%);
+    transform: translateX(-800%);
   }
   100% {
     transform: translateX(0%);
