@@ -81,7 +81,7 @@
     height: 100%;
     width: 100%;
     max-width: 1100px;
-    animation: slider 30s linear 1.5s infinite alternate;
+    animation: slider 80s linear 2s infinite alternate;
 
     img {
       width: 100%;
@@ -96,7 +96,7 @@
     transform: translateX(0%);
   }
   50% {
-    transform: translateX(-800%);
+    transform: translateX(-1000%);
   }
   100% {
     transform: translateX(0%);
@@ -300,7 +300,7 @@
 @media screen and (min-width: 800px) {
   .banner {
     #banner-img {
-      animation: sliderMini 50s linear 1.5s infinite alternate;
+      animation: sliderMini 90s linear 1.5s infinite alternate;
       img {
         max-width: 50%;
       }
@@ -319,7 +319,13 @@
     transform: translateX(0%);
   }
   50% {
-    transform: translateX(-200%);
+    transform: translateX(-449%);
+  }
+  55% {
+    transform: translateX(-450%);
+  }
+  60% {
+    transform: translateX(-449%);
   }
   100% {
     transform: translateX(0%);
