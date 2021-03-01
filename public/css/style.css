@@ -580,14 +580,16 @@ nav {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 1em;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .price-time .show-price {
   font-size: 16px;
+  padding: 5px 0;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .price-time .show-time {
-  font-size: 16px;
+  font-size: 20px;
   padding-right: 10px;
 }
 
