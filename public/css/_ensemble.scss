@@ -340,7 +340,7 @@
 
 .cards-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   margin: auto;
   max-width: 1100px;
@@ -547,7 +547,7 @@
     // margin: 5vh 0;
 
     .new-card {
-      max-width: 500px;
+      max-width: 350px;
       border-radius: 2ch;
     }
 

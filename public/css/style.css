@@ -1324,9 +1324,9 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin: auto;
@@ -1553,7 +1553,7 @@ nav {
 
 @media screen and (min-width: 800px) {
   .new-section .new-card {
-    max-width: 500px;
+    max-width: 350px;
     border-radius: 2ch;
   }
   .new-section #andrea-s-card:hover {
