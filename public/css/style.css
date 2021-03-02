@@ -1341,7 +1341,8 @@ nav {
   width: 100vw;
   margin: 2vh 1vw 0;
   height: 250px;
-  background-color: #0c0c0c;
+  background: -webkit-gradient(linear, left top, right top, from(#0c0c0c), to(#0e0e0e));
+  background: linear-gradient(to right, #0c0c0c, #0e0e0e);
   overflow: hidden;
   border-radius: 1em;
 }
