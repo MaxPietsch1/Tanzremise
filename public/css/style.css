@@ -230,7 +230,7 @@ nav {
           transform: translateX(200%);
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
-  background-color: #212121;
+  background-color: #0e0e0e;
   -ms-flex-direction: column;
       flex-direction: column;
   -webkit-box-pack: space-evenly;
@@ -517,14 +517,16 @@ nav {
   position: fixed;
   bottom: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   font-size: calc(3rem + 10vw);
   line-height: 70px;
   opacity: 0.1;
   text-align: right;
   font-family: "Dancing Script", cursive;
   z-index: -1;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper {
@@ -561,6 +563,14 @@ nav {
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-address {
   font-size: 16px;
+}
+
+.index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-address a {
+  color: white;
+}
+
+.index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-address a:hover {
+  color: #92deff;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-date {
@@ -605,6 +615,10 @@ nav {
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 2px;
+}
+
+.index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-kontakt-btn:hover {
+  background: #b32238;
 }
 
 .footer-links {
@@ -1711,6 +1725,11 @@ html {
   z-index: 3;
 }
 
+.dropdown-wrapper .header-hover:hover {
+  background: rgba(255, 255, 255, 0.064);
+  cursor: pointer;
+}
+
 .dropdown-wrapper .dropdown-content {
   margin-top: 7px;
   display: -webkit-box;
@@ -1725,6 +1744,7 @@ html {
           flex-direction: column;
   width: 20vw;
   min-width: 200px;
+  border-radius: 0 1ch 1ch;
   background: #01465c;
   z-index: 11;
   -webkit-transition: all 0.3s ease;
@@ -1738,8 +1758,8 @@ html {
   text-decoration: none;
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.125);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.125);
+  padding-left: 10px;
   letter-spacing: 1px;
-  text-align: center;
   font-family: "Dancing Script", cursive;
   font-size: 0;
   -webkit-transition: all 0.2s ease;
@@ -1870,7 +1890,7 @@ html {
 .dropdown-content-active {
   opacity: 1 !important;
   margin-top: 10px !important;
-  border: 5px solid #002f3e !important;
+  border: 2px solid #002f3e !important;
 }
 
 .a-links-active {
@@ -1971,12 +1991,12 @@ html {
 }
 
 .top-img-wrapper {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7))), url("../images/man-on-stage.jpg");
-  background: linear-gradient(rgba(0, 0, 0, 0.7)), url("../images/man-on-stage.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4))), url("../images/gallery/2017/1NYN/_MG_8852ejpgk.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.4)), url("../images/gallery/2017/1NYN/_MG_8852ejpgk.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  height: 93vh;
+  min-height: 93vh;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1984,31 +2004,39 @@ html {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 2em 0;
 }
 
 .top-img-wrapper h1 {
   font-family: "Dancing Script", cursive;
   font-size: 75px;
   color: white;
-  opacity: 0.7;
+  padding: 10vh 0;
+}
+
+.contact-information-two {
+  background: rgba(14, 14, 14, 0.324);
+  padding: 10px 18px;
+  border-radius: 10px;
 }
 
 .contact-information-two .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: auto;
+  margin: 5vh auto;
 }
 
 .contact-information-two .text .contact-icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-right: 5%;
   font-size: 18px;
   width: 40px;
@@ -2026,13 +2054,11 @@ html {
 
 .contact-information-two .text .text-info .txt1 {
   font-size: 18px;
-  margin-bottom: 5px;
 }
 
 .contact-information-two .text .text-info .txt2 {
   font-size: 16px;
   color: #cdcdcd;
-  margin-bottom: 20px;
   letter-spacing: 0.5px;
 }
 
@@ -2173,6 +2199,9 @@ html {
 }
 
 @media screen and (min-width: 600px) {
+  .top-img-wrapper h1 {
+    padding: 3vh 0 10vh;
+  }
   .contact-wrapper .contact-info-wrapper {
     width: 500px;
   }

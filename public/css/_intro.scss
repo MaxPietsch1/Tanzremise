@@ -38,7 +38,6 @@
   justify-content: center;
   height: 50vh;
   padding-top: 10vh;
-  // z-index: -2 !important;
 
   h1 {
     font-family: "Dancing Script";
@@ -156,15 +155,15 @@
           bottom: 50%;
           left: 50%;
 
-          transform: translate(-50%, 50%);
-          // font-size: 80px;
+          // transform: translate(-50%, 50%);
+          transform: translate3d(0, 0, 0);
           font-size: calc(3rem + 10vw);
           line-height: 70px;
           opacity: 0.1;
           text-align: right;
           font-family: "Dancing Script", cursive;
-          // letter-spacing: 25px;
           z-index: -1;
+          transition: all 0.3 ease;
         }
       }
 
@@ -200,6 +199,14 @@
 
           .show-address {
             font-size: 16px;
+
+            a {
+              color: white;
+              &:hover {
+                // color: rgb(160, 252, 255);
+                color: $link-color;
+              }
+            }
           }
           .show-date {
             font-size: 32px;
@@ -232,6 +239,9 @@
             font-size: 18px;
             font-weight: 600;
             letter-spacing: 2px;
+            &:hover {
+              background: #b32238;
+            }
           }
         }
       }
