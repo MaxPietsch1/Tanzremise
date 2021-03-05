@@ -1353,8 +1353,8 @@ nav {
   display: flex;
   max-width: 500px;
   width: 100vw;
-  margin: 2vh 1vw 0;
-  height: 250px;
+  margin: 0 2vw 12vh 0;
+  height: 200px;
   background: -webkit-gradient(linear, left top, right top, from(#0c0c0c), to(#0e0e0e));
   background: linear-gradient(to right, #0c0c0c, #0e0e0e);
   overflow: hidden;
@@ -1385,32 +1385,43 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   max-width: 100vw;
-  padding: 0px 0px 10px 15px;
+  padding: 0px 0px 0px 15px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.new-text h3 {
-  font-family: cursive;
-  font-size: 20px;
-  letter-spacing: 3px;
-  border-bottom: 2px solid #ffea01;
-  color: #ffea01;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+.new-text .new-text-header {
+  text-align: center;
+}
+
+.new-text .new-text-header .text-titel {
+  font-family: "dancing script", cursive;
+  font-weight: 100;
+  color: #ca3434;
+}
+
+.new-text .new-text-header .text-name {
+  font-weight: 400;
+}
+
+.new-text .new-text-header .text-alias {
+  font-weight: 400;
+  color: #d5d5d5;
 }
 
 .new-text .new-text-content {
-  padding: 5px 20px 5px 0;
+  padding-top: 5px;
+  border-top: 1px solid #2b2b2b;
 }
 
 .new-text .new-text-content h4 {
   font-size: 12px;
   font-weight: 400;
+  color: #e8e8e8;
 }
 
 .new-text .new-text-content .more-text {
@@ -1427,73 +1438,29 @@ nav {
   padding: 2px 0;
 }
 
-.new-text .new-text-content .about-essen {
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  font-size: 0px;
-  font-weight: 900;
-  display: block;
-  padding: 4px 0;
-}
-
 .new-text p {
-  color: #ffea01;
   padding: 5px 0;
 }
 
 .new-text .new-button {
-  margin-top: auto;
-  border: 1px solid #ffea01;
-  border-radius: 5px;
-  font-size: 11px;
+  font-size: 12px;
+  font-weight: 600;
   background: none;
-  color: #ffea01;
-  padding: 5px 10px 5px 30px;
+  background: #941c2f;
+  color: white;
+  border: 1px solid #941c2f;
+  border-radius: 2px;
+  width: 100%;
+  padding: 2px 0;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   cursor: pointer;
 }
 
 .new-text .new-button:hover {
-  background: #ffea01;
-  color: black;
+  background: #ca3434;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-}
-
-#andrea-s {
-  color: #ffea01;
-  border-color: #ffea01;
-}
-
-#andrea {
-  color: #ff4869;
-  border-color: #ff4869;
-}
-
-#btn-andrea {
-  border-color: #ff4869;
-  color: #ff4869;
-}
-
-#btn-andrea:hover {
-  background: #ff4869;
-  color: black;
-}
-
-#sven {
-  color: #c4308b;
-  border-color: #c4308b;
-}
-
-#btn-sven {
-  border-color: #c4308b;
-  color: #c4308b;
-}
-
-#btn-sven:hover {
-  background: #c4308b;
-  color: black;
 }
 
 .new-text-content-active {
