@@ -149,7 +149,16 @@
       min-width: 200px;
       max-width: 350px;
       margin-bottom: 30vh;
-      // border-radius: 2ch;
+      // text-align: center;
+
+      .werbung-title {
+        h3 {
+          font-size: 50px;
+          font-weight: 400;
+          font-family: "Dancing Script", cursive;
+          text-align: center;
+        }
+      }
 
       .werbung-img {
         position: relative;
@@ -170,14 +179,7 @@
         flex-direction: column;
         // margin: auto;
 
-        width: 275px;
-        .werbung-title {
-          h3 {
-            font-size: 38px;
-            font-weight: 400;
-            font-family: "Danceing Script", cursive;
-          }
-        }
+        // width: 275px;
 
         .werbung-info {
           display: flex;
@@ -197,6 +199,7 @@
 
           .show-address {
             font-size: 16px;
+            padding: 2px 0 10px;
 
             a {
               color: white;
@@ -207,7 +210,7 @@
             }
           }
           .show-date {
-            font-size: 32px;
+            font-size: 26px;
             font-weight: bolder;
             letter-spacing: 4px;
           }

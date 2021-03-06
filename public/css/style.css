@@ -516,6 +516,13 @@ nav {
   margin-bottom: 30vh;
 }
 
+.index-main .werbung-banners .werbung-banner .werbung-title h3 {
+  font-size: 50px;
+  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+}
+
 .index-main .werbung-banners .werbung-banner .werbung-img {
   position: relative;
   height: 350px;
@@ -537,13 +544,6 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 275px;
-}
-
-.index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-title h3 {
-  font-size: 38px;
-  font-weight: 400;
-  font-family: "Danceing Script", cursive;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info {
@@ -563,6 +563,7 @@ nav {
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-address {
   font-size: 16px;
+  padding: 2px 0 10px;
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-address a {
@@ -574,7 +575,7 @@ nav {
 }
 
 .index-main .werbung-banners .werbung-banner .werbung-wrapper .werbung-info .show-date {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: bolder;
   letter-spacing: 4px;
 }
