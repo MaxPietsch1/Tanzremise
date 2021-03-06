@@ -83,7 +83,7 @@
     animation: slider 80s linear 2s infinite alternate;
 
     img {
-      width: 100%;
+      min-width: 100%;
       object-fit: cover;
     }
   }
@@ -314,7 +314,7 @@
     #banner-img {
       animation: sliderMini 90s linear 1.5s infinite alternate;
       img {
-        max-width: 50%;
+        min-width: 50%;
       }
     }
     .banner-text {
