@@ -1394,7 +1394,6 @@ nav {
 }
 
 .new-text .new-text-header {
-  padding-top: 3%;
   text-align: center;
 }
 
@@ -1411,6 +1410,7 @@ nav {
 }
 
 .new-text .new-text-header .text-alias {
+  padding-bottom: 5px;
   font-weight: 400;
   color: #d5d5d5;
 }
