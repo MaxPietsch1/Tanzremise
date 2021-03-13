@@ -2,7 +2,6 @@
 const navLinks = document.querySelectorAll(".nav-links")[0];
 const burger = document.querySelector(".burger");
 const backgroundNav = document.getElementsByClassName("background-nav")[0];
-console.log(backgroundNav);
 
 burger.addEventListener("click", function (e) {
   navLinks.classList.toggle("nav-active");
@@ -14,7 +13,6 @@ burger.addEventListener("click", function (e) {
 
 // Scroll to top
 const toTop = document.getElementsByClassName("to-top")[0];
-console.log(toTop);
 
 window.onscroll = function () {
   scrollToTop();

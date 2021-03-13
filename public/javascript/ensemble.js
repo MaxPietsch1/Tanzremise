@@ -57,25 +57,19 @@ const newText = document.getElementsByClassName("new-text-content");
 const moreText = document.getElementsByClassName("more-text");
 const about = document.getElementsByClassName("about-essen");
 const newBtn = document.getElementsByClassName("new-button");
+const extraText = document.getElementsByClassName("extra-text");
 
 for (let i = 0; i < newCard.length; i++) {
-  newBtn[i].addEventListener("click", () => {
-    console.log(about[i]);
+  newBtn[i].addEventListener("click", function () {
     newText[i].classList.toggle("new-text-content-active");
-    // console.log(moreText);
-    // console.log(moreText[i]);
-    // moreText[i].classList.toggle("more-text-active");
+    moreText[i].classList.toggle("more-text-active");
+    newCard[i].classList.toggle("new-card-active");
+    extraText[i].classList.toggle("extra-text-active");
 
-    if (moreText[i].style.display == "block") {
-      moreText[i].style.display = "none";
-      about[i].style.fontSize = "0px";
-      newBtn[i].textContent = "READ MORE";
+    if (this.innerHTML === "READ MORE") {
+      newBtn[i].innerHTML = "READ LESS";
     } else {
-      moreText[i].style.display = "block";
-      moreText[i].style.opacity = "1";
-      moreText[i].style.fontSize = "12px";
-      about[i].style.fontSize = "14px";
-      newBtn[i].textContent = "READ LESS";
+      newBtn[i].innerHTML = "READ MORE";
     }
   });
 }
