@@ -983,12 +983,11 @@ nav {
           flex-direction: column;
   background: #0e0e0e;
   margin-top: -1px;
-  padding-top: 5vh;
 }
 
 .ensemble-header-text {
-  max-width: 1100px;
-  min-height: 60vh;
+  width: 100vw;
+  height: 60vh;
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1003,7 +1002,10 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 1;
+  background: radial-gradient(rgba(14, 14, 14, 0.1) 30%, #0e0e0e), url("../images/test3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .ensemble-header-text h1 {
@@ -1013,30 +1015,8 @@ nav {
   color: #ca3434;
 }
 
-.ensemble-hero {
-  width: 100vw;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.ensemble-hero img {
-  position: fixed;
-  top: 50vh;
-  width: 100%;
-  min-width: 500px;
-  max-width: 800px;
-  opacity: 0.6;
+.ensemble-header-text h2 {
+  font-weight: 400;
 }
 
 .new-section {
@@ -1047,10 +1027,25 @@ nav {
   position: relative;
 }
 
+.background-notes {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.9)), to(#0e0e0e)), url("../images/octave-background.svg");
+  background: linear-gradient(rgba(14, 14, 14, 0.9), #0e0e0e), url("../images/octave-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100vw;
+  max-width: 400px;
+  height: 400px;
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
 .cards-header {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 25vh 3% 15vh;
-  max-width: 800px;
+  padding: 15vh 4% 10vh;
+  max-width: 1000px;
   margin: auto;
   position: relative;
   text-align: center;
@@ -1068,14 +1063,13 @@ nav {
 }
 
 .cards-header img {
-  min-width: 500px;
-  max-width: 600px;
+  width: calc(400px + 50vw);
   position: absolute;
-  bottom: 20vh;
+  bottom: 0vh;
   left: 20vw;
   opacity: 0.1;
-  -webkit-transform: rotate(218deg) rotateX(0deg);
-          transform: rotate(218deg) rotateX(0deg);
+  -webkit-transform: rotate(210deg) rotateX(0deg);
+          transform: rotate(210deg) rotateX(0deg);
 }
 
 .cards-wrapper {
@@ -1103,13 +1097,29 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   position: relative;
-  max-width: 300px;
+  max-width: 350px;
   border-radius: 2ch;
   padding: 6rem 3rem;
   background: -webkit-gradient(linear, left top, right top, from(#0c0c0c), to(#0e0e0e));
   background: linear-gradient(to right, #0c0c0c, #0e0e0e);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.new-card:hover {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
+.new-card .text-titel {
+  font-family: "dancing script", cursive;
+  font-weight: 100;
+  font-size: 40px;
+  color: #941c2f;
+  padding-bottom: 15px;
+  text-align: center;
 }
 
 .new-profile {
@@ -1123,15 +1133,25 @@ nav {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 2vh;
+  margin-bottom: 10px;
 }
 
 .new-profile img {
   width: 200px;
-  height: 230px;
-  border-radius: 5px;
+  height: 200px;
+  border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.new-profile img:hover {
+  border-radius: 5px;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  opacity: 1;
 }
 
 .new-text {
@@ -1153,24 +1173,19 @@ nav {
 
 .new-text .new-text-header {
   text-align: center;
-}
-
-.new-text .new-text-header .text-titel {
-  font-family: "dancing script", cursive;
-  font-weight: 100;
-  font-size: 30px;
-  color: #ca3434;
+  padding: 5px 0;
 }
 
 .new-text .new-text-header .text-name {
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 24px;
+  font-weight: 600;
 }
 
 .new-text .new-text-header .text-alias {
-  padding-bottom: 5px;
+  padding-bottom: 10px;
   font-weight: 400;
   color: #d5d5d5;
+  font-size: 14px;
 }
 
 .new-text .new-text-content {
@@ -1181,7 +1196,7 @@ nav {
 }
 
 .new-text .new-text-content h4 {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: #e8e8e8;
 }
@@ -1221,7 +1236,7 @@ nav {
   color: #ca3434;
   border: 2px solid #941c2f;
   border-radius: 5px;
-  margin: auto;
+  margin: 5px auto 0;
   width: 100%;
   padding: 2px 0;
   -webkit-transition: all 0.2s ease;
@@ -1251,7 +1266,7 @@ nav {
 
 .more-text-active {
   color: white;
-  font-size: 14px !important;
+  font-size: 16px !important;
   opacity: 1 !important;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
