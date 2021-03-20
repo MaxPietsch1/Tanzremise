@@ -1104,13 +1104,6 @@ nav {
   background: linear-gradient(to right, #0c0c0c, #0e0e0e);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  opacity: 0.8;
-}
-
-.new-card:hover {
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  opacity: 1;
 }
 
 .new-card .text-titel {
@@ -1144,14 +1137,13 @@ nav {
      object-fit: cover;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  opacity: 0.9;
 }
 
 .new-profile img:hover {
   border-radius: 5px;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  opacity: 1;
+  height: 215px;
 }
 
 .new-text {
@@ -1301,6 +1293,26 @@ nav {
   }
   .cards-wrapper h2 {
     font-size: calc(1rem + 0.5vw) !important;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .new-card {
+    opacity: 0.6;
+  }
+  .new-card:hover {
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+  .new-profile img {
+    opacity: 0.9;
+  }
+  .new-profile img:hover {
+    border-radius: 5px;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+    opacity: 1;
   }
 }
 

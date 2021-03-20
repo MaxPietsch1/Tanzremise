@@ -422,12 +422,11 @@
   padding: 6rem 3rem;
   background: linear-gradient(to right, rgb(12, 12, 12), rgb(14, 14, 14));
   transition: all 0.3s ease;
-  opacity: 0.8;
 
-  &:hover {
-    transition: all 0.3s ease;
-    opacity: 1;
-  }
+  // &:hover {
+  //   transition: all 0.3s ease;
+  //   opacity: 1;
+  // }
 
   .text-titel {
     font-family: "dancing script", cursive;
@@ -456,13 +455,11 @@
     border-radius: 50%;
     object-fit: cover;
     transition: all 0.3s ease;
-    opacity: 0.9;
 
     &:hover {
-      // transform: scale(1.05) translateY(-5px);
       border-radius: 5px;
       transition: all 0.5s ease-out;
-      opacity: 1;
+      height: 215px;
     }
   }
 }
@@ -658,6 +655,26 @@
   .cards-wrapper {
     h2 {
       font-size: calc(1rem + 0.5vw) !important;
+    }
+  }
+}
+@media screen and (min-width: 1000px) {
+  .new-card {
+    opacity: 0.6;
+    &:hover {
+      transition: all 0.3s ease;
+      opacity: 1;
+    }
+  }
+  .new-profile {
+    img {
+      opacity: 0.9;
+      &:hover {
+        // transform: scale(1.05) translateY(-5px);
+        border-radius: 5px;
+        transition: all 0.5s ease-out;
+        opacity: 1;
+      }
     }
   }
 }
