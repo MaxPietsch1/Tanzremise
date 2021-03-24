@@ -58,14 +58,16 @@
     img {
       width: 100%;
       border-radius: 2ch;
+      box-shadow: 10px 10px 5px rgba(14, 14, 14, 0.509);
     }
     h4 {
-      width: 206px;
-      transform: translateX(275px) rotate(90deg);
-      transform-origin: 0px 0px;
+      // width: 206px;
+      // transform: translateX(275px) rotate(90deg);
+      // transform-origin: 0px 0px;
+      font-family: "dancing script", cursive;
       font-weight: 400;
       text-align: center;
-      font-size: calc(0.8em + 0.5vw);
+      font-size: calc(1em + 1vw);
     }
   }
 }
@@ -190,12 +192,12 @@
       width: 350px;
       // margin-right: 50px;
       h4 {
-        width: 282px;
-        transform: translateX(375px) rotate(90deg);
-        transform-origin: 0px 0px;
+        // width: 282px;
+        // transform: translateX(375px) rotate(90deg);
+        // transform-origin: 0px 0px;
         font-weight: 400;
         text-align: center;
-        font-size: calc(0.8em + 0.5vw);
+        // font-size: calc(0.8em + 0.5vw);
       }
     }
   }
@@ -243,7 +245,7 @@
     }
   }
 }
-@media screen and(min-width: 1000px) {
+@media screen and(min-width: 1200px) {
   .previous-shows-container {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     .previous-img {
