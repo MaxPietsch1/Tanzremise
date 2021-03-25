@@ -78,19 +78,19 @@
   width: 100vw;
   display: grid;
 
-  margin: 10vh 0;
+  margin: 3vh 0 10vh;
 }
 
 .previous-show-container {
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 1vh 0;
+  margin: 5vh 0;
 
   .header-show {
     h4 {
       font-family: "Dancing script", cursive;
-      font-size: 14px;
+      font-size: $paragraph;
       letter-spacing: 3px;
       font-weight: 600;
       text-align: center;
@@ -110,10 +110,23 @@
 // section 3
 .coming-shows-container {
   border-top: 1px solid white;
-  border-bottom: 1px solid white;
-  margin: 10vh 0;
+  // border-bottom: 1px solid white;
+  margin: 15vh 0;
+  h2 {
+    display: inline-block;
+    font-family: "dancing script", cursive;
+    font-size: $header1b;
+    transform: translateY(-64%);
+    background: rgb(14, 14, 14);
+    margin-left: 3%;
+    padding: 0 5px;
+    span {
+      color: $primal-color;
+      text-transform: capitalize;
+    }
+  }
   .coming-show-container {
-    margin: 10vh auto;
+    margin: 15vh auto;
     width: 100vw;
     h3 {
       font-family: "dancing script", cursive;
@@ -125,17 +138,29 @@
 }
 
 .coming-show {
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, 0);
   position: relative;
-  // width: 60vw;
-  #coming-alle-jahre-hero {
+  max-width: 800px;
+  margin: auto;
+
+  #coming-alle-jahre-hero,
+  #coming-imhotep-hero {
     position: absolute;
     top: 0;
     left: 50%;
     transform: translate(-50%);
     z-index: -1;
-    // width: 80vw;
     margin: auto;
+  }
+
+  #coming-alle-jahre-hero {
+    background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)),
+      url("../images/landingpage/alle-jahre-wieder.jpg");
+    background-position-y: 53%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  #coming-imhotep-hero {
     background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)),
       url("../images/landingpage/imhotep.jpg");
     background-position-y: 53%;
@@ -157,19 +182,20 @@
     width: 80vw;
     max-width: 200px;
     margin: auto;
-    // height: 100%;
-    // min-width: 200px;
-    // margin: auto;
-    #alle-jahre-wider-img {
-      background: url("../images/landingpage/imhotep.jpg");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      width: 100%;
-      height: 0px;
+
+    #alle-jahre-wider-img,
+    #imhotep-img {
       padding: 50% 0;
-      object-fit: cover;
-      border: 1px solid white;
+      box-shadow: 5px -5px 5px rgba(14, 14, 14, 0.2),
+        0 0 10px rgba(14, 14, 14, 0.2), -5px -5px 5px rgba(14, 14, 14, 0.2);
+    }
+    #alle-jahre-wider-img {
+      background: url("../images/landingpage/alle-jahre-wieder.jpg")
+        center/cover no-repeat;
+    }
+    #imhotep-img {
+      background: url("../images/landingpage/imhotep.jpg") center/cover
+        no-repeat;
     }
     .buy-ticket {
       display: none;
@@ -185,14 +211,14 @@
 
   .coming-info {
     width: 100%;
+    min-height: 40vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     text-align: center;
-    // margin-top: 20px;
     a {
       color: white;
-      font-size: $hyperlink;
+      font-size: $paragraph;
     }
     .coming-dates {
       p {
@@ -212,12 +238,20 @@
     }
     .ticket-mobile {
       width: 100%;
-      padding: 5px 10px;
+      padding: 10px 10px;
       border: none;
-      background: $primal-color;
+      background: $primal-color2;
       color: white;
       font-weight: 600;
+      font-size: $paragraph;
       letter-spacing: 2px;
+      transition: all 0.3s ease;
+      &:hover {
+        background: #ac2237;
+        border-radius: 2ch;
+        letter-spacing: 1.5px;
+        transition: all 0.3s ease;
+      }
     }
   }
 }
