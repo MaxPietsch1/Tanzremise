@@ -3,7 +3,8 @@ $header1b: calc(3rem + 2.5vw);
 $header1c: calc(1.8rem + 2vw);
 $header2: calc(1.3rem + 1vw);
 $header3: calc(1.4rem + 0.2vw);
-$paragraph: calc(1.4rem + 0.2vw);
+$paragraph: calc(1.2rem + 0.2vw);
+$hyperlink: calc(1rem + 0.2vw);
 $p-logo: calc(1rem + 0.5vw);
 
 $nav-font: 14px;
@@ -28,16 +29,16 @@ $red: #fc5185;
 @import "aktuelles";
 
 @media screen and (min-width: 1400px) {
-  h2 {
-    font-size: 2.4rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
+  // h2 {
+  //   font-size: 2.4rem;
+  // }
+  // h3 {
+  //   font-size: 1.6rem;
+  // }
 
-  p {
-    font-size: 1.8rem;
-  }
+  // p {
+  //   font-size: 1.8rem;
+  // }
 
   .ewe-wrapper {
     h1 {

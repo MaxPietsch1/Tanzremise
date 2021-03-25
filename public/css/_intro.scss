@@ -77,19 +77,11 @@
   min-height: 65vh;
   width: 100vw;
   display: grid;
-  // flex-direction: column;
-  // justify-content: space-between;
+
   margin: 10vh 0;
 }
 
-// .shows-row-one,
-// .shows-row-two {
-// display: flex;
-// border: 1px solid white;
-// width: 100vw;
-// min-height: 50vh;
 .previous-show-container {
-  // min-height: 30vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -98,30 +90,137 @@
   .header-show {
     h4 {
       font-family: "Dancing script", cursive;
-      // transform: translateY(50px);
-      // font-size: calc(14px + 0.2vw);
       font-size: 14px;
       letter-spacing: 3px;
       font-weight: 600;
       text-align: center;
-      // margin: 5px 0;
       padding: 10px 0;
-      // background: rgba(14, 14, 14, 0.824);
       color: rgb(198, 198, 198);
     }
   }
   .previous-img {
-    // height: 100%;
-    // border: 1px solid red;
     img {
-      // height: 100%;
       max-height: 200px;
       width: 100%;
       object-fit: cover;
     }
   }
 }
-// }
+
+// section 3
+.coming-shows-container {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: 10vh 0;
+  .coming-show-container {
+    margin: 10vh auto;
+    width: 100vw;
+    h3 {
+      font-family: "dancing script", cursive;
+      font-size: $header1c;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+}
+
+.coming-show {
+  border: 1px solid white;
+  position: relative;
+  // width: 60vw;
+  #coming-alle-jahre-hero {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: -1;
+    // width: 80vw;
+    margin: auto;
+    background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)),
+      url("../images/landingpage/imhotep.jpg");
+    background-position-y: 53%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .coming-hero {
+    width: 100%;
+    height: 25vh;
+  }
+}
+
+.coming-show-info {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 15vh;
+  .coming-image {
+    width: 80vw;
+    max-width: 200px;
+    margin: auto;
+    // height: 100%;
+    // min-width: 200px;
+    // margin: auto;
+    #alle-jahre-wider-img {
+      background: url("../images/landingpage/imhotep.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 100%;
+      height: 0px;
+      padding: 50% 0;
+      object-fit: cover;
+      border: 1px solid white;
+    }
+    .buy-ticket {
+      display: none;
+      width: 100%;
+      padding: 5px 10px;
+      border: none;
+      background: $primal-color;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+  }
+
+  .coming-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    // margin-top: 20px;
+    a {
+      color: white;
+      font-size: $hyperlink;
+    }
+    .coming-dates {
+      p {
+        font-size: $paragraph;
+      }
+    }
+    .coming-bottom {
+      display: flex;
+      justify-content: space-around;
+      h4 {
+        font-size: $paragraph;
+        font-weight: 400;
+      }
+      .coming-time {
+        font-weight: 600;
+      }
+    }
+    .ticket-mobile {
+      width: 100%;
+      padding: 5px 10px;
+      border: none;
+      background: $primal-color;
+      color: white;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+  }
+}
 
 // Footer
 .footer-links {

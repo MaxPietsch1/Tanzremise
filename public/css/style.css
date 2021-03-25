@@ -19,6 +19,7 @@ h2,
 h3,
 h4,
 p,
+a,
 button {
   font-family: "Montserrat", sans-serif;
 }
@@ -453,6 +454,144 @@ nav {
      object-fit: cover;
 }
 
+.coming-shows-container {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  margin: 10vh 0;
+}
+
+.coming-shows-container .coming-show-container {
+  margin: 10vh auto;
+  width: 100vw;
+}
+
+.coming-shows-container .coming-show-container h3 {
+  font-family: "dancing script", cursive;
+  font-size: calc(1.8rem + 2vw);
+  text-align: center;
+  padding: 10px;
+}
+
+.coming-show {
+  border: 1px solid white;
+  position: relative;
+}
+
+.coming-show #coming-alle-jahre-hero {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  z-index: -1;
+  margin: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.4))), url("../images/landingpage/imhotep.jpg");
+  background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)), url("../images/landingpage/imhotep.jpg");
+  background-position-y: 53%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.coming-show .coming-hero {
+  width: 100%;
+  height: 25vh;
+}
+
+.coming-show-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 15vh;
+}
+
+.coming-show-info .coming-image {
+  width: 80vw;
+  max-width: 200px;
+  margin: auto;
+}
+
+.coming-show-info .coming-image #alle-jahre-wider-img {
+  background: url("../images/landingpage/imhotep.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 0px;
+  padding: 50% 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 1px solid white;
+}
+
+.coming-show-info .coming-image .buy-ticket {
+  display: none;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  background: #ca3434;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.coming-show-info .coming-info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+}
+
+.coming-show-info .coming-info a {
+  color: white;
+  font-size: calc(1rem + 0.2vw);
+}
+
+.coming-show-info .coming-info .coming-dates p {
+  font-size: calc(1.2rem + 0.2vw);
+}
+
+.coming-show-info .coming-info .coming-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.coming-show-info .coming-info .coming-bottom h4 {
+  font-size: calc(1.2rem + 0.2vw);
+  font-weight: 400;
+}
+
+.coming-show-info .coming-info .coming-bottom .coming-time {
+  font-weight: 600;
+}
+
+.coming-show-info .coming-info .ticket-mobile {
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  background: #ca3434;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
 .footer-links {
   height: 100vh;
   display: -webkit-box;
@@ -779,7 +918,7 @@ nav {
 
 .show-wrapper .shows p {
   color: black;
-  font-size: calc(1.4rem + 0.2vw);
+  font-size: calc(1.2rem + 0.2vw);
   font-family: "Montserrat", sans-serif;
 }
 
@@ -1832,15 +1971,6 @@ html {
 }
 
 @media screen and (min-width: 1400px) {
-  h2 {
-    font-size: 2.4rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
-  p {
-    font-size: 1.8rem;
-  }
   .ewe-wrapper h1 {
     font-size: 5rem;
   }
