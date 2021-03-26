@@ -160,17 +160,12 @@
 
   #coming-alle-jahre-hero {
     background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)),
-      url("../images/landingpage/alle-jahre-wieder.jpg");
-    background-position-y: 53%;
-    background-repeat: no-repeat;
-    background-size: cover;
+      url("../images/landingpage/alle-jahre-wieder.jpg") 0% 40% / cover
+        no-repeat;
   }
   #coming-imhotep-hero {
     background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)),
-      url("../images/landingpage/imhotep.jpg");
-    background-position-y: 53%;
-    background-repeat: no-repeat;
-    background-size: cover;
+      url("../images/landingpage/imhotep-coming.JPG") 0% 84% / cover no-repeat;
   }
   .coming-hero {
     width: 100%;
@@ -199,7 +194,7 @@
         center/cover no-repeat;
     }
     #imhotep-img {
-      background: url("../images/landingpage/imhotep.jpg") center/cover
+      background: url("../images/landingpage/imhotep-coming.jpg") center/cover
         no-repeat;
     }
     .buy-ticket {
@@ -274,9 +269,9 @@
       letter-spacing: 2px;
       transition: all 0.3s ease;
       &:hover {
-        background: $primal-color;
+        background: $primal-color2;
         border-color: transparent;
-        color: white;
+        color: rgb(205, 205, 205);
         letter-spacing: 1.8px;
         transition: all 0.3s ease;
       }
@@ -294,6 +289,7 @@
   z-index: 100;
   background: rgb(14, 14, 14);
   border-top: 7px solid black;
+  box-shadow: 0 -5px 5px rgba(9, 9, 9, 0.358);
 }
 .footer-links-header {
   h3 {
@@ -312,13 +308,22 @@
     border: none;
     margin: 2vh 0;
     a {
-      padding: 5px;
+      padding: 5px 25px;
       display: block;
       text-decoration: none;
       font-size: 18px;
       color: white;
       width: 100%;
       text-align: center;
+      border: 2px solid rgba(14, 14, 14, 0);
+      border-radius: 0.5ch;
+      transition: all 0.3s ease;
+
+      &:hover {
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 2ch;
+        transition: all 0.5s ease;
+      }
     }
   }
 }

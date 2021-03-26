@@ -514,19 +514,13 @@ nav {
 }
 
 .coming-show #coming-alle-jahre-hero {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.4))), url("../images/landingpage/alle-jahre-wieder.jpg");
-  background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)), url("../images/landingpage/alle-jahre-wieder.jpg");
-  background-position-y: 53%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.4))), url("../images/landingpage/alle-jahre-wieder.jpg") 0% 40%/cover no-repeat;
+  background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)), url("../images/landingpage/alle-jahre-wieder.jpg") 0% 40%/cover no-repeat;
 }
 
 .coming-show #coming-imhotep-hero {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.4))), url("../images/landingpage/imhotep.jpg");
-  background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)), url("../images/landingpage/imhotep.jpg");
-  background-position-y: 53%;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(14, 14, 14, 0.4))), url("../images/landingpage/imhotep-coming.JPG") 0% 84%/cover no-repeat;
+  background: linear-gradient(rgba(14, 14, 14, 0.4) rgba(14, 14, 14, 0.4)), url("../images/landingpage/imhotep-coming.JPG") 0% 84%/cover no-repeat;
 }
 
 .coming-show .coming-hero {
@@ -566,7 +560,7 @@ nav {
 }
 
 .coming-show-info .coming-image #imhotep-img {
-  background: url("../images/landingpage/imhotep.jpg") center/cover no-repeat;
+  background: url("../images/landingpage/imhotep-coming.jpg") center/cover no-repeat;
 }
 
 .coming-show-info .coming-image .buy-ticket {
@@ -647,9 +641,9 @@ nav {
 }
 
 .coming-show-info .coming-info .ticket-mobile:hover {
-  background: #ca3434;
+  background: #941c2f;
   border-color: transparent;
-  color: white;
+  color: #cdcdcd;
   letter-spacing: 1.8px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -673,6 +667,8 @@ nav {
   z-index: 100;
   background: #0e0e0e;
   border-top: 7px solid black;
+  -webkit-box-shadow: 0 -5px 5px rgba(9, 9, 9, 0.358);
+          box-shadow: 0 -5px 5px rgba(9, 9, 9, 0.358);
 }
 
 .footer-links-header h3 {
@@ -701,13 +697,24 @@ nav {
 }
 
 .footer-link .kontakt-bottom-btn a {
-  padding: 5px;
+  padding: 5px 25px;
   display: block;
   text-decoration: none;
   font-size: 18px;
   color: white;
   width: 100%;
   text-align: center;
+  border: 2px solid rgba(14, 14, 14, 0);
+  border-radius: 0.5ch;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.footer-link .kontakt-bottom-btn a:hover {
+  border: 2px solid white;
+  border-radius: 2ch;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 @media screen and (min-width: 450px) and (max-width: 1000px) {
@@ -1402,11 +1409,8 @@ html {
 }
 
 .hero-background {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("../images/man-on-stage.jpg");
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/man-on-stage.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(1, 0, 62, 0.5)), to(rgba(1, 0, 62, 0.5))), url("../images/landingpage/vampire.jpg") center/cover no-repeat;
+  background: linear-gradient(to right, rgba(1, 0, 62, 0.5), rgba(1, 0, 62, 0.5)), url("../images/landingpage/vampire.jpg") center/cover no-repeat;
   position: absolute;
   top: 0;
 }
@@ -1418,9 +1422,6 @@ html {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -1428,19 +1429,31 @@ html {
   height: 100vh;
 }
 
-.hero-background .hero-content h2 {
-  margin: 20vh auto 0 auto;
+.hero-background .hero-content .hero-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+}
+
+.hero-background .hero-content .hero-header img {
+  width: 50%;
+}
+
+.hero-background .hero-content .hero-header h2 {
   font-size: calc(2.5rem + 6vw);
   letter-spacing: 2px;
   font-family: "Dancing Script", cursive;
-}
-
-.hero-background .hero-content h3 {
-  font-family: "Roboto", sans-serif;
-  font-size: 20px;
-  color: #ca3434;
-  font-weight: normal;
-  margin-bottom: 50px;
 }
 
 .scroll-overflow {
@@ -1451,16 +1464,6 @@ html {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100vw;
-}
-
-.scroll-overflow .arrow-right {
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  color: #ca3434;
-  margin: 7px 2% 5px 0;
-  cursor: pointer;
-  text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black, 3px 0px 1px black, 1px -1px 1px black;
-  pointer-events: none;
 }
 
 .dropdown {
@@ -1730,17 +1733,6 @@ html {
 }
 
 @media screen and (min-width: 600px) {
-  .hero-content {
-    -webkit-box-align: start !important;
-        -ms-flex-align: start !important;
-            align-items: flex-start !important;
-  }
-  .hero-content .hero-header {
-    margin-left: 10vw;
-  }
-  .hero-content .hero-header h2 {
-    margin-top: 12vh !important;
-  }
   .scroll-overflow .dropdown .dropdown-wrapper #header-hover-wide {
     font-size: 16px;
   }
