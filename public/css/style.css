@@ -439,7 +439,7 @@ nav {
 
 .previous-show-container .header-show h4 {
   font-family: "Dancing script", cursive;
-  font-size: calc(1.2rem + 0.2vw);
+  font-size: calc(1.5rem + 0.1vw);
   letter-spacing: 3px;
   font-weight: 600;
   text-align: center;
@@ -452,6 +452,14 @@ nav {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.previous-show-container .previous-img img:hover {
+  max-height: 400px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .coming-shows-container {
@@ -490,7 +498,7 @@ nav {
 .coming-show {
   border: 1px solid rgba(255, 255, 255, 0);
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   margin: auto;
 }
 
@@ -574,7 +582,7 @@ nav {
 
 .coming-show-info .coming-info {
   width: 100%;
-  min-height: 40vh;
+  min-height: 35vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,19 +590,24 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   text-align: center;
 }
 
 .coming-show-info .coming-info a {
+  padding-top: 5px;
   color: white;
-  font-size: calc(1.2rem + 0.2vw);
+  font-size: calc(1.5rem + 0.1vw);
+}
+
+.coming-show-info .coming-info .coming-dates {
+  padding: 20px 0;
 }
 
 .coming-show-info .coming-info .coming-dates p {
-  font-size: calc(1.2rem + 0.2vw);
+  font-size: calc(1.5rem + 0.1vw);
 }
 
 .coming-show-info .coming-info .coming-bottom {
@@ -603,10 +616,15 @@ nav {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 5px;
 }
 
 .coming-show-info .coming-info .coming-bottom h4 {
-  font-size: calc(1.2rem + 0.2vw);
+  font-size: calc(1.5rem + 0.1vw);
   font-weight: 400;
 }
 
@@ -617,11 +635,12 @@ nav {
 .coming-show-info .coming-info .ticket-mobile {
   width: 100%;
   padding: 10px 10px;
-  border: none;
-  background: #941c2f;
-  color: white;
-  font-weight: 600;
-  font-size: calc(1.2rem + 0.2vw);
+  border: 3px solid #ff4343;
+  border-radius: 1ch;
+  background: none;
+  color: #ff4343;
+  font-weight: bold;
+  font-size: calc(1.5rem + 0.1vw);
   letter-spacing: 2px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -961,7 +980,7 @@ nav {
 
 .show-wrapper .shows p {
   color: black;
-  font-size: calc(1.2rem + 0.2vw);
+  font-size: calc(1.5rem + 0.1vw);
   font-family: "Montserrat", sans-serif;
 }
 

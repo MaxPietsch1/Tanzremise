@@ -103,6 +103,11 @@
       max-height: 200px;
       width: 100%;
       object-fit: cover;
+      transition: all 0.2s ease;
+      &:hover {
+        max-height: 400px;
+        transition: all 0.3s ease;
+      }
     }
   }
 }
@@ -140,7 +145,7 @@
 .coming-show {
   border: 1px solid rgba(255, 255, 255, 0);
   position: relative;
-  max-width: 800px;
+  max-width: 600px;
   margin: auto;
 
   #coming-alle-jahre-hero,
@@ -211,16 +216,18 @@
 
   .coming-info {
     width: 100%;
-    min-height: 40vh;
+    min-height: 35vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     text-align: center;
     a {
+      padding-top: 5px;
       color: white;
       font-size: $paragraph;
     }
     .coming-dates {
+      padding: 20px 0;
       p {
         font-size: $paragraph;
       }
@@ -228,6 +235,8 @@
     .coming-bottom {
       display: flex;
       justify-content: space-around;
+      flex-direction: column;
+      padding-bottom: 5px;
       h4 {
         font-size: $paragraph;
         font-weight: 400;
@@ -236,13 +245,31 @@
         font-weight: 600;
       }
     }
+    // .ticket-mobile {
+    //   width: 100%;
+    //   padding: 10px 10px;
+    //   border: none;
+    //   background: $primal-color2;
+    //   color: white;
+    //   font-weight: 600;
+    //   font-size: $paragraph;
+    //   letter-spacing: 2px;
+    //   transition: all 0.3s ease;
+    //   &:hover {
+    //     background: #ac2237;
+    //     border-radius: 2ch;
+    //     letter-spacing: 1.5px;
+    //     transition: all 0.3s ease;
+    //   }
+    // }
     .ticket-mobile {
       width: 100%;
       padding: 10px 10px;
-      border: none;
-      background: $primal-color2;
-      color: white;
-      font-weight: 600;
+      border: 3px solid rgb(255, 67, 67);
+      border-radius: 1ch;
+      background: none;
+      color: rgb(255, 67, 67);
+      font-weight: bold;
       font-size: $paragraph;
       letter-spacing: 2px;
       transition: all 0.3s ease;
