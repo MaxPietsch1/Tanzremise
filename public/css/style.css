@@ -647,9 +647,10 @@ nav {
 }
 
 .coming-show-info .coming-info .ticket-mobile:hover {
-  background: #ac2237;
-  border-radius: 2ch;
-  letter-spacing: 1.5px;
+  background: #ca3434;
+  border-color: transparent;
+  color: white;
+  letter-spacing: 1.8px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }

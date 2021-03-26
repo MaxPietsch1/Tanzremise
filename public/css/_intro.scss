@@ -274,9 +274,10 @@
       letter-spacing: 2px;
       transition: all 0.3s ease;
       &:hover {
-        background: #ac2237;
-        border-radius: 2ch;
-        letter-spacing: 1.5px;
+        background: $primal-color;
+        border-color: transparent;
+        color: white;
+        letter-spacing: 1.8px;
         transition: all 0.3s ease;
       }
     }
