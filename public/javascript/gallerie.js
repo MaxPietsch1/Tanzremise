@@ -29,23 +29,6 @@ function buildLightBox() {
   }
 }
 
-// Pagination
-// If scrollposition is between 100 - 200, display array index [0-50]. Between 200 - 300 , display array index [50 - 100]
-// Style, empty colored divs 100px, remove when images loads.
-// const onScrollHandler = function () {
-//   const scrollTop =
-//     document.documentElement.scrollTop || document.body.scrollTop;
-//   if (scrollTop > 100 && scrollTop < 120) {
-//     console.log("100 - 120");
-//   }
-//   if (scrollTop > 200 && scrollTop < 220) {
-//     console.log("200 - 220", item, index);
-//   }
-//   if (scrollTop > 300 && scrollTop < 320) {
-//     console.log("300 - 320");
-//   }
-// };
-
 // Test Container for adding images dynamically
 const DynImgContainer = document.getElementsByClassName(
   "images-dynamically"
@@ -61,38 +44,6 @@ function addImgElement(imgSrc) {
   imgElement.setAttribute("data-src", imgSrc);
   DynImgContainer.append(imgElement);
 }
-
-// GET request to Express server, to get images
-// const dynamicImages = async () => {
-//   const response = await fetch("http://localhost:8000/dynamicImages");
-
-//   try {
-//     const data = await response.json();
-
-//     console.log(data);
-
-//     for (let i = 0; i < data.length; i++) {
-//       // const WeWillRockYou = data[i].slice(0, 5);
-
-//       const onScrollHandler = function () {
-//         const scrollTop =
-//           document.documentElement.scrollTop || document.body.scrollTop;
-//         if (scrollTop > 100 && scrollTop < 120) {
-//           console.log("100 - 120");
-//         }
-//         if (scrollTop > 200 && scrollTop < 202) {
-//           // WeWillRockYou.forEach((img) => addImgElement(img));
-//         }
-//         if (scrollTop > 300 && scrollTop < 320) {
-//           console.log("300 - 320");
-//         }
-//       };
-//       window.addEventListener("scroll", onScrollHandler);
-//     }
-//   } catch (err) {
-//     console.log("ERROR dynamicImages", err);
-//   }
-// };
 
 function convertToLinkString(title) {
   return title.toLowerCase().replace(/\s/g, "-");
@@ -129,17 +80,6 @@ async function dynamicImages() {
   const data = await response.json();
 
   const lazyloadWrapper = document.querySelector(".lazyload-wrapper");
-
-  // const years = data.filter((showObject, index) => {
-  //   data.indexOf(showObject) === index;
-  // });
-
-  // const years = data
-  //   .filter(
-  //     (showObj, index) =>
-  //       data.findIndex((so) => so.year === showObj.year) === index
-  //   )
-  //   .map((so) => so.year);
 
   const years = data
     .map((so) => so.year)
@@ -188,29 +128,6 @@ async function dynamicImages() {
       });
   });
 
-  // data.forEach((showObj) => {
-
-  //   // Title
-  //   const title = document.createElement("p");
-  //   title.classList.add("show-alone");
-  //   title.textContent = showObj.title;
-  //   lazyImagesWrapper.append(title);
-  //   const imagesWrapper = document.createElement("div");
-  //   imagesWrapper.classList.add("images-wrapper");
-  //   // Images
-  //   const lazyImages = document.createElement("div");
-  //   lazyImages.classList.add("lazy-images");
-  //   showObj.imgArray.forEach((imageUrl) => {
-  //     const imageElement = document.createElement("img");
-  //     imageElement.classList.add("lazy");
-  //     imageElement.setAttribute("data-src", imageUrl);
-  //     lazyImages.append(imageElement);
-  //   });
-  //   imagesWrapper.append(lazyImages);
-
-  //   lazyImagesWrapper.append(imagesWrapper);
-  //   lazyloadWrapper.append(lazyImagesWrapper);
-  // });
   lazyLoadActivate();
   buildLightBox();
   addClickEventToNavigation();
@@ -251,24 +168,6 @@ function lazyLoadActivate() {
   window.addEventListener("orientationChange", lazyload);
 }
 
-// Navbar for the image gallery
-// const rightArrow = document.getElementsByClassName("arrow-right")[0];
-// const lazyNav = document.querySelector(".lazy-nav");
-// const arrowMenu = document.getElementsByClassName("arrow-menu")[0];
-
-// arrowMenu.addEventListener("click", function () {
-//   console.log(arrowMenu);
-//   lazyNav.classList.toggle("lazy-nav-active");
-//   rightArrow.classList.toggle("arrow-right-active");
-//   const openClose = document.getElementsByClassName("open-close")[0];
-//   if (openClose.innerHTML === "Open") {
-//     openClose.innerHTML = "Close";
-//   } else if ((openClose.innerHTML = "Close")) {
-//     openClose.innerHTML = "Open";
-//   }
-//   console.log(openClose);
-// });
-
 function addClickEventToNavigation() {
   const lazyNavWrapper = document.getElementsByClassName("dropdown-wrapper");
   const lazyNavContent = document.getElementsByClassName("dropdown-content");
@@ -281,6 +180,7 @@ function addClickEventToNavigation() {
     lazyNavHeader[i].addEventListener("click", () => {
       lazyNavContent[i].classList.toggle("dropdown-content-active");
       lazyNavHeader[i].classList.toggle("header-hover-active");
+      lazyNavWrapper[i].classList.toggle("dropdown-wrapper-active");
 
       // REMOVE then yearlink toggles propperly
       const dropdown_a = lazyNavContent[i].getElementsByTagName("a");
@@ -293,6 +193,7 @@ function addClickEventToNavigation() {
             () => {
               lazyNavContent[i].classList.remove("dropdown-content-active");
               lazyNavHeader[i].classList.remove("header-hover-active");
+              lazyNavWrapper[i].classList.remove("dropdown-wrapper-active");
               dropdown_a[y].classList.remove("a-links-active");
             },
             true
