@@ -101,7 +101,8 @@ html {
   margin: 10px 0;
   padding: 5px;
   border: 2px solid transparent;
-  border-left: 2px solid white;
+  border-left: 2px solid rgb(190, 190, 190);
+  border-right: 2px solid rgb(190, 190, 190);
   min-width: 150px;
   position: relative;
   transition: all 0.3s ease;
@@ -243,7 +244,7 @@ html {
       padding: 15px 0 10px 0;
       color: #040b12;
       background: white;
-      font-size: calc(1.5rem + 1vw);
+      font-size: $header3;
       letter-spacing: 10px;
       font-weight: normal;
       text-align: center;
@@ -254,7 +255,7 @@ html {
       display: inline;
       background: #040b12;
       color: white;
-      font-size: calc(0.6em + 2vw);
+      font-size: $paragraph;
       // font-weight: bolder;
       letter-spacing: 5px;
       text-align: center;

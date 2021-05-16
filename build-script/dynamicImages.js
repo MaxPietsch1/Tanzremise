@@ -19,6 +19,8 @@ years.forEach((year) => {
       }),
     };
     imagesEndpoint.push(showObj);
+
+    // console.log("imgArray", showObj.title);
   });
 });
 

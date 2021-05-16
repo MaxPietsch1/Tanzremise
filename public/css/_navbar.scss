@@ -6,6 +6,8 @@ body {
 
 nav {
   width: 100vw;
+  // max-width: 1500px;
+  margin: auto;
   // height: 1px;
   z-index: 2000;
 }
@@ -65,9 +67,15 @@ nav {
     list-style: none;
 
     a {
-      font-size: 16px;
-      color: white;
+      font-size: calc(1em + 0.2vw);
+      color: rgb(200, 200, 200);
       text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0);
+      &:hover {
+        color: white;
+        border-bottom: 1px solid white;
+        transition: all 0.3s ease;
+      }
     }
   }
 }
@@ -153,7 +161,7 @@ nav {
     position: absolute;
     display: flex;
     min-height: 7vh;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.241);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     left: 0;
     top: 0;
     justify-content: flex-end;
@@ -198,9 +206,9 @@ nav {
         padding: 1.2rem 0rem;
 
         a {
-          color: white;
+          // color: white;
           text-decoration: none;
-          font-size: 18;
+          // font-size: 18;
           font-family: "Montserrat", sans-serif;
         }
       }

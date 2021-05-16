@@ -30,9 +30,8 @@ function buildLightBox() {
 }
 
 // Test Container for adding images dynamically
-const DynImgContainer = document.getElementsByClassName(
-  "images-dynamically"
-)[0];
+const DynImgContainer =
+  document.getElementsByClassName("images-dynamically")[0];
 function addImgElement(imgSrc) {
   // remove "public" from url-path string
   let newString = imgSrc.replace("public", "");
@@ -45,6 +44,7 @@ function addImgElement(imgSrc) {
   DynImgContainer.append(imgElement);
 }
 
+console.log("test");
 function convertToLinkString(title) {
   return title.toLowerCase().replace(/\s/g, "-");
 }
@@ -96,7 +96,6 @@ async function dynamicImages() {
     yearsShow.textContent = year;
     yearsShow.classList.add("year-shows");
     lazyImagesWrapper.append(yearsShow);
-
     // nav element
     buildNavigationElement(data.filter((so) => so.year === year));
 
@@ -111,14 +110,54 @@ async function dynamicImages() {
         lazyImagesWrapper.append(title);
         const imagesWrapper = document.createElement("div");
         imagesWrapper.classList.add("images-wrapper");
+
         // Images
         const lazyImages = document.createElement("div");
         lazyImages.classList.add("lazy-images");
+
+        // TEST, ADD 5 IMAGES, CLICK BUTTON TO ADD 5 MORE IMAGES
+        //
+        //
+        //
+        //
+        // const firstFiveImgs = showObj.imgArray.slice(0, 5);
+        // firstFiveImgs.forEach((imageUrl) => {
+        //   const imageElement = document.createElement("img");
+        //   imageElement.classList.add("lazy");
+        //   imageElement.setAttribute("data-src", imageUrl);
+        //   lazyImages.append(imageElement);
+        // });
+
+        // test 2 Split imgArray into chunks of 10 images
+        // add button.addEventListener on chunked_arr to display next chunk of images
+        // function chunk(array, size) {
+        //   const chunked_arr = [];
+        //   let copied = [...array]; // ES6 destructuring
+        //   const numOfChild = Math.ceil(copied.length / size); // Round up to the nearest integer
+        //   for (let i = 0; i < numOfChild; i++) {
+        //     chunked_arr.push(copied.splice(0, size));
+        //   }
+        //   console.log("chunked images 1", chunked_arr[1]);
+        //   // testButton.addEventListener("click", () => {
+        //   //   console.log("chunked images 0", chunked_arr[0]);
+        //   // });
+        //   return chunked_arr;
+        // }
+        // chunk(showObj.imgArray, 20);
+
+        //
+        //
+        //
+        //
+        // ORIGINAL UNDER
+        // Adds all images on webpages, lazyload on scroll
+        //
+        //
+        //
         showObj.imgArray.forEach((imageUrl) => {
           const imageElement = document.createElement("img");
           imageElement.classList.add("lazy");
           imageElement.setAttribute("data-src", imageUrl);
-
           lazyImages.append(imageElement);
         });
         imagesWrapper.append(lazyImages);
