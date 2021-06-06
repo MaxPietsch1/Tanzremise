@@ -9,7 +9,7 @@ function buildLightBox() {
     const children = images[i].children;
     for (let i = 0; i < children.length; i++) {
       children[i].addEventListener("click", function myFunction() {
-        xBtn.classList.toggle("close-image");
+        xBtn.classList.add("close-image");
         imgBackground.appendChild(xBtn);
 
         xBtn.addEventListener("click", () => {
@@ -17,6 +17,7 @@ function buildLightBox() {
           xBtn.classList.remove("close-image");
           imgBackground.classList.remove("lazyload-wrapper-active");
           document.body.classList.remove("stop-scroll");
+          xBtn.remove();
         });
 
         this.classList.toggle("lazy-image-active");
@@ -108,61 +109,20 @@ async function dynamicImages() {
         title.id = convertToLinkString(showObj.title);
         title.textContent = showObj.title;
         lazyImagesWrapper.append(title);
-        const imagesWrapper = document.createElement("div");
-        imagesWrapper.classList.add("images-wrapper");
 
         // Images
         const lazyImages = document.createElement("div");
         lazyImages.classList.add("lazy-images");
 
-        // TEST, ADD 5 IMAGES, CLICK BUTTON TO ADD 5 MORE IMAGES
-        //
-        //
-        //
-        //
-        // const firstFiveImgs = showObj.imgArray.slice(0, 5);
-        // firstFiveImgs.forEach((imageUrl) => {
-        //   const imageElement = document.createElement("img");
-        //   imageElement.classList.add("lazy");
-        //   imageElement.setAttribute("data-src", imageUrl);
-        //   lazyImages.append(imageElement);
-        // });
-
-        // test 2 Split imgArray into chunks of 10 images
-        // add button.addEventListener on chunked_arr to display next chunk of images
-        // function chunk(array, size) {
-        //   const chunked_arr = [];
-        //   let copied = [...array]; // ES6 destructuring
-        //   const numOfChild = Math.ceil(copied.length / size); // Round up to the nearest integer
-        //   for (let i = 0; i < numOfChild; i++) {
-        //     chunked_arr.push(copied.splice(0, size));
-        //   }
-        //   console.log("chunked images 1", chunked_arr[1]);
-        //   // testButton.addEventListener("click", () => {
-        //   //   console.log("chunked images 0", chunked_arr[0]);
-        //   // });
-        //   return chunked_arr;
-        // }
-        // chunk(showObj.imgArray, 20);
-
-        //
-        //
-        //
-        //
-        // ORIGINAL UNDER
         // Adds all images on webpages, lazyload on scroll
-        //
-        //
-        //
         showObj.imgArray.forEach((imageUrl) => {
           const imageElement = document.createElement("img");
           imageElement.classList.add("lazy");
           imageElement.setAttribute("data-src", imageUrl);
           lazyImages.append(imageElement);
         });
-        imagesWrapper.append(lazyImages);
 
-        lazyImagesWrapper.append(imagesWrapper);
+        lazyImagesWrapper.append(lazyImages);
         lazyloadWrapper.append(lazyImagesWrapper);
       });
   });
@@ -186,20 +146,41 @@ function lazyLoadActivate() {
 
     lazyloadThrottleTimeout = setTimeout(function () {
       const lazyloadImages = document.querySelectorAll("img.lazy");
-      // console.log("we get here", lazyloadImages);
       const scrollTop = window.pageYOffset;
       lazyloadImages.forEach(function (img) {
-        if (img.offsetTop < window.innerHeight + scrollTop) {
+        // when images is in viewport, then the images will get loaded inside the view
+        // console.log(img);
+        if (
+          img.offsetTop < window.innerHeight + scrollTop &&
+          img.offsetTop > scrollTop
+        ) {
           img.src = img.dataset.src;
           img.classList.remove("lazy");
+
+          console.log(img);
+
+          img.addEventListener("click", (a) => {
+            if (a.toElement.dataset.src.includes("gallery")) {
+              let withThumbnail = a.toElement.dataset.src.replace(
+                "thumbnailgallery",
+                "gallery"
+              );
+
+              a.toElement.dataset.src = withThumbnail;
+
+              console.log(withThumbnail);
+              img.src = img.dataset.src;
+            }
+          });
         }
       });
+
       if (lazyloadImages.length == 0) {
         document.removeEventListener("scroll", lazyload);
         window.removeEventListener("resize", lazyload);
         window.removeEventListener("orientationChange", lazyload);
       }
-    }, 20);
+    }, 50);
   }
 
   document.addEventListener("scroll", lazyload);

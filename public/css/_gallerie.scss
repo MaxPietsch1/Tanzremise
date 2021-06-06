@@ -10,19 +10,14 @@ html {
 .hero-gallery {
   display: flex;
   justify-content: center;
-  // align-items: center;
   min-height: 85vh;
-  background: 
-  // linear-gradient(-45deg, #941c2e75, rgba(0, 0, 0, 0.541)),
-    linear-gradient(
+  background: linear-gradient(
       -45deg,
       rgba(0, 0, 0, 0),
       rgba(16, 14, 117, 0.2),
       rgba(0, 0, 0, 0.8)
     ),
     url("../images/gallerypage/_MG_9384ejpgk.jpg") center / cover no-repeat;
-  // position: static;
-  // top: 0;
   h2 {
     font-size: calc(5rem + 3vw);
     font-family: "Dancing Script", cursive;
@@ -31,7 +26,6 @@ html {
     padding-top: 10vh;
     display: flex;
     flex-direction: column;
-    // justify-content: space-evenly;
     color: $primal-color;
     #foto-gallery {
       font-size: calc(2rem + 3vw);
@@ -40,43 +34,12 @@ html {
   }
 }
 
-// .hero-content {
-//   display: flex;
-//   justify-content: space-between;
-//   flex-direction: column;
-//   min-height: 50vh;
-
-// .hero-header {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   height: 100%;
-
-// h2 {
-//   font-size: calc(2.5rem + 6vw);
-//   letter-spacing: 2px;
-//   font-family: "Dancing Script", cursive;
-// }
-// .hero-img {
-//   width: 100vw;
-//   background: rgba(255, 255, 255, 0.1);
-//   text-align: center;
-//   padding: 2vh 0;
-//   img {
-//     width: 50%;
-//   }
-// }
-// }
-// }
-
 // Lazy-nav STARTS
 
 .scroll-overflow {
   display: flex;
   justify-content: center;
   width: 100vw;
-  // background: linear-gradient(rgb(1, 2, 5), #140c44, rgb(14, 14, 14) 100%);
   background: rgb(14, 14, 14);
   padding-top: 25px;
   z-index: 2;
@@ -92,7 +55,6 @@ html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  // grid-template-columns: repeat(auto-fit, 110px);
   grid-template-columns: repeat(auto-fit, 1fr);
   padding: 2vh 0 10vh;
 }
@@ -113,15 +75,9 @@ html {
   .header-hover {
     font-family: "montserrat", sans-serif;
     font-size: $link;
-    // min-width: 100px;
-    // width: 100%;
-    // margin: 0px 5px 0 0;
     transition: all 0.2s ease;
-    // border: 2px solid rgba(255, 255, 255, 0.336);
     padding: 10px 50px;
-    // border-radius: 20px;
     letter-spacing: 3px;
-    // z-index: 3;
     position: relative;
     &:hover {
       cursor: pointer;
@@ -149,11 +105,7 @@ html {
       color: white;
       text-decoration: none;
       box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.125);
-      // padding-left: 10px;
       letter-spacing: 1px;
-      // text-align: center;
-      // font-family: "Montserrat", sans-serif;
-      // font-family: "Dancing Script", cursive;
       font-size: 0;
       transition: all 0.2s ease;
       &:hover {
@@ -163,70 +115,17 @@ html {
   }
 }
 
-// Is commented out HTML
-// .arrow-menu {
-//   display: flex;
-//   cursor: pointer;
-//   background-color: $primal-color;
-//   &:hover {
-//     background-color: rgb(179, 43, 43);
-//   }
-
-//   .open-close {
-//     display: flex;
-//     align-items: center;
-//     // font-size: 16px;
-//     margin: 8px 5px 8px auto;
-//     color: white;
-//     text-shadow: 1px 1px 1px black, -1px -1px 1px black, -1px 1px 1px black,
-//       1px -1px 1px black;
-//     letter-spacing: 2px;
-//     pointer-events: none;
-//   }
-// }
-
-// .lazy-nav {
-//   display: flex;
-//   overflow: scroll;
-//   margin: auto;
-
-//   li {
-//     list-style: none;
-//     padding: 10px 0;
-//     border: 1px solid rgb(255, 255, 255);
-//     min-width: 140px;
-//     width: 50%;
-//     text-align: center;
-
-//     a {
-//       color: rgb(255, 245, 243);
-//       font-size: 18px;
-//       line-height: 25px;
-//     }
-//     span {
-//       a {
-//         color: rgb(192, 191, 191);
-//         font-size: 16px;
-//         text-decoration: none;
-//       }
-//       #das-biest {
-//         line-height: 15px;
-//       }
-//     }
-//   }
-// }
-
 // Lazy-nav ENDS
 
 .lazyload-wrapper {
   display: grid;
   max-width: 1000px;
   background: rgb(235, 235, 235);
+  z-index: 10001;
 
   .lazy-images-wrapper {
     display: flex;
     flex-direction: column;
-    // background-color: #040b12;
     background-color: rgb(14, 14, 14);
     width: 100vw;
     margin: auto;
@@ -239,9 +138,9 @@ html {
     }
 
     .year-shows {
-      // margin-top: 13px;
       font-family: "montserrat", sans-serif;
-      padding: 15px 0 10px 0;
+      // padding: 15px 0 10px 0;
+      padding: 20px 0;
       color: #040b12;
       background: white;
       font-size: $header3;
@@ -256,30 +155,25 @@ html {
       background: #040b12;
       color: white;
       font-size: $paragraph;
-      // font-weight: bolder;
       letter-spacing: 5px;
       text-align: center;
-      padding: 15px 0;
+      padding: 30px 0;
     }
 
-    .images-wrapper {
-      max-width: 1100px;
-      margin: auto;
-    }
     .lazy-images {
-      background: #060e17;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      display: grid;
+      gap: 30px;
+      justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       min-height: 10vh;
-      padding: 0 0.5vw;
-      margin-bottom: 5vh;
+      margin: 0 30px 5vh;
       img {
-        background: #f1f1fa42;
-        min-width: 80px;
+        background: #0000002b;
+        min-width: 200px;
         min-height: 100px;
-        width: calc(80px + 6vw);
-        max-height: 130px;
+        // width: calc(200px + 6vw);
+        width: 100%;
+        // max-height: 130px;
         object-fit: cover;
       }
     }
@@ -303,22 +197,13 @@ html {
 .header-hover-active {
   border-radius: 20px 20px 0px 0px !important;
   border-color: $gallery-blue !important;
-  // padding-bottom: 10px !important;
-  // border-bottom: none !important;
-  // background-color: rgba(182, 182, 253, 0.159);
-  // background-color: #01455c9c;
   color: $gallery-blue;
 }
 
 .dropdown-content-active {
   opacity: 1 !important;
-  // transition: all 0.2s ease;
   margin: 0 0 0 -2px !important;
-  // padding: 1vh;
   border: 2px solid $gallery-blue !important;
-  // border-left: 2px solid white !important;
-  // border-right: 2px solid white !important;
-  // transform: translate(50%);
 }
 
 .dropdown-wrapper-active {
@@ -362,93 +247,26 @@ html {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.863);
-  border: 5px solid rgb(66, 66, 66);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .close-image {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 900;
   padding: 7px;
   position: absolute;
   border-radius: 2ch;
   border: none;
-  background-color: rgb(231, 17, 17);
+  background-color: transparent;
   color: white;
-  text-shadow: 1px 1px 4px black;
-  top: 20px;
-  right: 10px;
+  top: 5vh;
+  right: 5vw;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
-// @ Media queries
-// @media screen and (min-width: 360px) {
-//   .lazy-nav,
-//   .scroll-overflow {
-//     width: 90vw;
-//   }
-//   .lazyload-wrapper {
-//     width: 90vw;
-//     .lazy-images {
-//       img {
-//         // height: 800px;
-//         // width: 1000px;
-//       }
-//     }
-//   }
-// }
-// @media screen and (min-width: 580px) {
-//   .lazy-nav,
-//   .scroll-overflow {
-//     width: 70vw;
-//   }
-//   .lazyload-wrapper {
-//     width: 70vw;
-//     .lazy-images-wrapper {
-//       .lazy-images {
-//         img {
-//           height: 220px;
-//           width: 400px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media screen and (min-width: 900px) {
-//   .lazyload-wrapper {
-//     .lazy-images-wrapper {
-//       flex-direction: column;
-//       .lazy-images {
-//         grid-template-columns: 1fr 1fr;
-//         img {
-//           // max-height: 550px;
-//           max-width: 800px;
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (min-width: 1100px) {
-//   .lazyload-wrapper {
-//     .lazy-images-wrapper {
-//       .lazy-images {
-//         grid-template-columns: 1fr 1fr 1fr;
-//       }
-//     }
-//   }
-// }
-
 @media screen and (min-width: 600px) {
-  // .hero-content {
-  //   align-items: flex-start !important;
-  //   .hero-header {
-  //     margin-left: 10vw;
-  //     h2 {
-  //       margin-top: 12vh !important;
-  //     }
-  //   }
-  // }
-
   .scroll-overflow {
     .dropdown {
       .dropdown-wrapper {
@@ -459,22 +277,9 @@ html {
     }
   }
 }
-// @media screen and (min-width: 800px) {
-//   .lazyload-wrapper {
-//     .lazy-images-wrapper {
-//       h3 {
-//         font-size: 36px;
-//       }
-//       p {
-//         font-size: 24px;
-//       }
-//     }
-//   }
-// }
 
 @media screen and (min-width: 1200px) {
   .hero-content {
-    // margin-left: 10vw !important;
     h2 {
       margin-top: 10vh !important;
       font-size: 110px !important;

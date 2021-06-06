@@ -45,7 +45,6 @@ button {
   font-size: 24px;
 }
 
-/* NAVBAR start */
 /* NAVBAR end */
 /* To Top button Start*/
 .to-top {
@@ -205,7 +204,7 @@ nav {
   position: fixed;
   top: 5vh;
   right: 9vw;
-  z-index: 10000;
+  z-index: 1999;
 }
 
 .burger i {
@@ -1512,6 +1511,7 @@ html {
   display: grid;
   max-width: 1000px;
   background: #ebebeb;
+  z-index: 10001;
 }
 
 .lazyload-wrapper .lazy-images-wrapper {
@@ -1543,7 +1543,7 @@ html {
 
 .lazyload-wrapper .lazy-images-wrapper .year-shows {
   font-family: "montserrat", sans-serif;
-  padding: 15px 0 10px 0;
+  padding: 20px 0;
   color: #040b12;
   background: white;
   font-size: calc(1.4rem + 0.2vw);
@@ -1560,35 +1560,25 @@ html {
   font-size: calc(1.2rem + 0.2vw);
   letter-spacing: 5px;
   text-align: center;
-  padding: 15px 0;
-}
-
-.lazyload-wrapper .lazy-images-wrapper .images-wrapper {
-  max-width: 1100px;
-  margin: auto;
+  padding: 30px 0;
 }
 
 .lazyload-wrapper .lazy-images-wrapper .lazy-images {
-  background: #060e17;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  display: -ms-grid;
+  display: grid;
+  gap: 30px;
+  justify-items: center;
+  -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   min-height: 10vh;
-  padding: 0 0.5vw;
-  margin-bottom: 5vh;
+  margin: 0 30px 5vh;
 }
 
 .lazyload-wrapper .lazy-images-wrapper .lazy-images img {
-  background: #f1f1fa42;
-  min-width: 80px;
+  background: #0000002b;
+  min-width: 200px;
   min-height: 100px;
-  width: calc(80px + 6vw);
-  max-height: 130px;
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -1670,22 +1660,24 @@ html {
   top: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.863);
-  border: 5px solid #424242;
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .close-image {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 900;
   padding: 7px;
   position: absolute;
   border-radius: 2ch;
   border: none;
-  background-color: #e71111;
+  background-color: transparent;
   color: white;
-  text-shadow: 1px 1px 4px black;
-  top: 20px;
-  right: 10px;
+  top: 5vh;
+  right: 5vw;
+}
+
+.close-image:hover {
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {

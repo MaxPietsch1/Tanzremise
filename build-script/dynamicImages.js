@@ -1,7 +1,7 @@
 const fs = require("fs");
 
 const imagesEndpoint = [];
-const src = "public/images/gallery";
+const src = "public/images/thumbnailgallery";
 
 const years = fs.readdirSync(src).filter((d) => d !== ".DS_Store");
 years.forEach((year) => {
@@ -15,7 +15,7 @@ years.forEach((year) => {
       year: year,
       title: show.replace(/_/g, " ").slice(1),
       imgArray: images.map((image) => {
-        return "/images/gallery/" + year + "/" + show + "/" + image;
+        return "/images/thumbnailgallery/" + year + "/" + show + "/" + image;
       }),
     };
     imagesEndpoint.push(showObj);
