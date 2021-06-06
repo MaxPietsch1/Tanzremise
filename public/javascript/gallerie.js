@@ -157,8 +157,6 @@ function lazyLoadActivate() {
           img.src = img.dataset.src;
           img.classList.remove("lazy");
 
-          console.log(img);
-
           img.addEventListener("click", (a) => {
             if (a.toElement.dataset.src.includes("gallery")) {
               let withThumbnail = a.toElement.dataset.src.replace(
@@ -180,7 +178,7 @@ function lazyLoadActivate() {
         window.removeEventListener("resize", lazyload);
         window.removeEventListener("orientationChange", lazyload);
       }
-    }, 50);
+    }, 20);
   }
 
   document.addEventListener("scroll", lazyload);

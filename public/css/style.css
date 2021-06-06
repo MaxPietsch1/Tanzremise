@@ -1509,8 +1509,7 @@ html {
 .lazyload-wrapper {
   display: -ms-grid;
   display: grid;
-  max-width: 1000px;
-  background: #ebebeb;
+  background-color: #0e0e0e;
   z-index: 10001;
 }
 
@@ -1524,6 +1523,7 @@ html {
           flex-direction: column;
   background-color: #0e0e0e;
   width: 100vw;
+  max-width: 1400px;
   margin: auto;
 }
 
@@ -1568,16 +1568,17 @@ html {
   display: grid;
   gap: 30px;
   justify-items: center;
-  -ms-grid-columns: (minmax(280px, 1fr))[auto-fill];
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   min-height: 10vh;
-  margin: 0 30px 5vh;
+  margin-bottom: 5vh;
 }
 
 .lazyload-wrapper .lazy-images-wrapper .lazy-images img {
   background: #0000002b;
   min-width: 200px;
-  min-height: 100px;
+  min-height: 130px;
+  height: 100%;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -1678,6 +1679,12 @@ html {
 
 .close-image:hover {
   cursor: pointer;
+}
+
+@media screen and (min-width: 340px) {
+  .lazy-images {
+    padding: 0 30px;
+  }
 }
 
 @media screen and (min-width: 600px) {
