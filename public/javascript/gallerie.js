@@ -5,12 +5,13 @@ function buildLightBox() {
   const imgBackground = document.createElement("div");
   const xBtn = document.createElement("button");
   xBtn.innerHTML = "X";
+
   for (let i = 0; i < images.length; i++) {
     const children = images[i].children;
+
     for (let i = 0; i < children.length; i++) {
       children[i].addEventListener("click", function myFunction() {
         xBtn.classList.add("close-image");
-        imgBackground.appendChild(xBtn);
 
         xBtn.addEventListener("click", () => {
           this.classList.remove("lazy-image-active");
@@ -19,6 +20,12 @@ function buildLightBox() {
           document.body.classList.remove("stop-scroll");
           xBtn.remove();
         });
+
+        if (imgBackground.classList.contains("lazyload-wrapper-active")) {
+          xBtn.remove();
+        } else {
+          imgBackground.appendChild(xBtn);
+        }
 
         this.classList.toggle("lazy-image-active");
         imgBackground.classList.toggle("lazyload-wrapper-active");
@@ -166,7 +173,7 @@ function lazyLoadActivate() {
 
               a.toElement.dataset.src = withThumbnail;
 
-              console.log(withThumbnail);
+              // console.log(withThumbnail);
               img.src = img.dataset.src;
             }
           });
