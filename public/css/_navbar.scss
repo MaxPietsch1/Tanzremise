@@ -48,18 +48,18 @@ nav {
 .nav-links {
   display: flex;
   flex-direction: row;
-  position: absolute;
+  position: fixed;
   height: 100vh;
-  min-width: 80vw;
+  min-width: 100vw;
   top: 0;
   right: 0;
   z-index: 1001;
-  transform: translateX(200%);
-  transition: all 0.2s ease;
+  transform: translateY(-100%);
+  transition: all 0.8s ease-in;
   background-color: rgb(14, 14, 14);
   flex-direction: column;
   justify-content: space-evenly;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 
   li {
     padding: 0;
@@ -67,7 +67,7 @@ nav {
     list-style: none;
 
     a {
-      font-size: calc(1em + 0.2vw);
+      font-size: $link;
       color: rgb(200, 200, 200);
       text-decoration: none;
       border-bottom: 1px solid rgba(255, 255, 255, 0);
@@ -188,6 +188,7 @@ nav {
     }
 
     .nav-links {
+      position: relative;
       display: flex;
       align-items: center;
       flex-direction: row;
@@ -221,6 +222,7 @@ nav {
   position: fixed;
   top: 0;
   transform: translateX(0px);
+  transition: all 0.8s ease-out;
 }
 
 // .burger-active {
@@ -235,4 +237,5 @@ nav {
   width: 100vw;
   background: rgba(0, 0, 0, 0.8);
   z-index: 99;
+  transition: all 0.8s ease-out;
 }

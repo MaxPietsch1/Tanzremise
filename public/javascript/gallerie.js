@@ -1,7 +1,5 @@
 function buildLightBox() {
   const images = document.getElementsByClassName("lazy-images");
-  // const lazyWrapper = document.getElementsByClassName("lazy-gallery")[0];
-
   const imgBackground = document.createElement("div");
   const xBtn = document.createElement("button");
   xBtn.innerHTML = "X";
@@ -17,25 +15,86 @@ function buildLightBox() {
           this.classList.remove("lazy-image-active");
           xBtn.classList.remove("close-image");
           imgBackground.classList.remove("lazyload-wrapper-active");
-          document.body.classList.remove("stop-scroll");
           xBtn.remove();
+          if (document.body.style.position == "fixed") {
+            const scrollY = document.body.style.top;
+            document.body.style.position = "";
+            document.body.style.top = "";
+            window.scrollTo(0, parseInt(scrollY || "0") * -1);
+          }
         });
 
         if (imgBackground.classList.contains("lazyload-wrapper-active")) {
           xBtn.remove();
+          const scrollY = document.body.style.top;
+          document.body.style.position = "";
+          document.body.style.top = "";
+          window.scrollTo(0, parseInt(scrollY || "0") * -1);
         } else {
           imgBackground.appendChild(xBtn);
+          document.body.style.top = `-${window.scrollY}px`;
+          document.body.style.position = "fixed";
         }
 
         this.classList.toggle("lazy-image-active");
         imgBackground.classList.toggle("lazyload-wrapper-active");
         document.body.append(imgBackground);
-        // Gallerie stop scroll image not working
-        document.body.classList.toggle("stop-scroll");
       });
     }
   }
 }
+
+// ------------------------------------------------------------------------------------------------------------------------
+
+const lazyGallery = document.querySelector(".lazy-gallery");
+const stickyNav = document.getElementsByClassName("sticky-navigation")[0];
+const stickyLazyloadWrapper = document.querySelector(".lazyload-wrapper");
+const dropdown = document.querySelector(".dropdown");
+
+const sticky = stickyNav.offsetTop;
+
+const bodyRect = document.body.getBoundingClientRect();
+const dropdownRect = dropdown.getBoundingClientRect();
+const stickyLazyLoad = stickyLazyloadWrapper.getBoundingClientRect();
+const stickyLazyGallery = lazyGallery.getBoundingClientRect();
+const stickyNavRect = stickyNav.getBoundingClientRect();
+// const offsetStickyNav = stickyNavRect.top + stickyLazyLoad.top;
+const offsetStickyNav = bodyRect.top + dropdownRect.bottom;
+
+// console.log(stickyNav.scrollTop + stickyNav.scrollLeft);
+// console.log("dropdown", dropdownRect);
+// console.log("offsetStickyNav", offsetStickyNav);
+
+const scrollTop = document.documentElement.scrollTop;
+// console.log(bodyRect.top + dropdownRect.top);
+
+// document.addEventListener("scroll", () => {
+//   console.log(stickyLazyGallery);
+//   if (
+//     document.body.scrollTop > offsetStickyNav ||
+//     document.documentElement.scrollTop > offsetStickyNav
+//   ) {
+//     stickyNav.classList.add("sticky-navigation-active");
+//   } else {
+//     stickyNav.classList.remove("sticky-navigation-active");
+//   }
+// });
+
+// window.onscroll = function () {
+//   scrollToTopTest();
+// };
+
+// function scrollToTopTest() {
+//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+//     // stickyNav.classList.add("sticky-navigation-active");
+//     console.log("add");
+//   } else {
+//     // stickyNav.classList.remove("sticky-navigation-active");
+//     console.log("remove");
+//   }
+// }
+
+// ------------------------------------------------------------------------------------------------------------------------
 
 // Test Container for adding images dynamically
 const DynImgContainer =
@@ -52,7 +111,7 @@ function addImgElement(imgSrc) {
   DynImgContainer.append(imgElement);
 }
 
-console.log("test");
+// console.log("test");
 function convertToLinkString(title) {
   return title.toLowerCase().replace(/\s/g, "-");
 }
@@ -127,6 +186,7 @@ async function dynamicImages() {
           imageElement.classList.add("lazy");
           imageElement.setAttribute("data-src", imageUrl);
           lazyImages.append(imageElement);
+          // console.log(imageElement);
         });
 
         lazyImagesWrapper.append(lazyImages);
@@ -150,13 +210,11 @@ function lazyLoadActivate() {
     if (lazyloadThrottleTimeout) {
       clearTimeout(lazyloadThrottleTimeout);
     }
-
     lazyloadThrottleTimeout = setTimeout(function () {
       const lazyloadImages = document.querySelectorAll("img.lazy");
       const scrollTop = window.pageYOffset;
       lazyloadImages.forEach(function (img) {
         // when images is in viewport, then the images will get loaded inside the view
-        // console.log(img);
         if (
           img.offsetTop < window.innerHeight + scrollTop &&
           img.offsetTop > scrollTop
@@ -170,11 +228,43 @@ function lazyLoadActivate() {
                 "thumbnailgallery",
                 "gallery"
               );
-
               a.toElement.dataset.src = withThumbnail;
-
-              // console.log(withThumbnail);
               img.src = img.dataset.src;
+
+              const imgLoader = document.createElement("div");
+              const backgroundActive = document.getElementsByClassName(
+                "lazyload-wrapper-active"
+              );
+
+              imgLoader.classList.add("img-loader");
+              document.body.append(imgLoader);
+
+              function loaded() {
+                imgLoader.remove();
+              }
+
+              img.addEventListener("click", () => {
+                imgLoader.remove();
+              });
+              if (!backgroundActive.length > 0) {
+                imgLoader.remove();
+              } else {
+                const closeImg = backgroundActive[0].children[0];
+                closeImg.addEventListener("click", () => {
+                  imgLoader.remove();
+                });
+              }
+
+              // when image is done loading -> remove loadbar
+              if (img.complete) {
+                loaded();
+              } else {
+                img.addEventListener("load", loaded);
+                img.addEventListener("error", function () {
+                  alert("error");
+                });
+              }
+              // https://stackoverflow.com/questions/280049/how-to-create-a-javascript-callback-for-knowing-when-an-image-is-loaded
             }
           });
         }
@@ -197,14 +287,17 @@ function addClickEventToNavigation() {
   const lazyNavWrapper = document.getElementsByClassName("dropdown-wrapper");
   const lazyNavContent = document.getElementsByClassName("dropdown-content");
   const lazyNavHeader = document.getElementsByClassName("header-hover");
-  const lazyNavHeaderID = document.getElementById("header-hover-wide");
+  // const dropdownTest = document.getElementsByClassName("dropdown-wrapper");
+  // const lazyNavHeaderID = document.getElementById("header-hover-wide");
 
   // Click on the year to activate a dropdownlist. Click on a link or somewhere else to close the dropdownlist
   for (let i = 0; i < lazyNavHeader.length; i++) {
     // console.log(lazyNavHeader[i]);
-    lazyNavHeader[i].addEventListener("click", () => {
+    // lazyNavHeader[i].addEventListener("click", () => {
+    lazyNavWrapper[i].addEventListener("click", () => {
       lazyNavContent[i].classList.toggle("dropdown-content-active");
       lazyNavHeader[i].classList.toggle("header-hover-active");
+      // dropdownTest[i].classList.toggle("header-hover-active");
       lazyNavWrapper[i].classList.toggle("dropdown-wrapper-active");
 
       // REMOVE then yearlink toggles propperly
