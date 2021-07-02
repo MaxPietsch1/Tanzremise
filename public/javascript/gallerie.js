@@ -44,57 +44,18 @@ function buildLightBox() {
   }
 }
 
-// ------------------------------------------------------------------------------------------------------------------------
+// Stickynavbar on photogallery
+function openStickyNav() {
+  const stickyNav = document.getElementsByClassName("sticky-allshows")[0];
+  const stickyUl = document.getElementsByClassName("sticky-ul-hide")[0];
+  const stickyArrow = document.getElementsByClassName("sticky-arrow")[0];
 
-const lazyGallery = document.querySelector(".lazy-gallery");
-const stickyNav = document.getElementsByClassName("sticky-navigation")[0];
-const stickyLazyloadWrapper = document.querySelector(".lazyload-wrapper");
-const dropdown = document.querySelector(".dropdown");
-
-const sticky = stickyNav.offsetTop;
-
-const bodyRect = document.body.getBoundingClientRect();
-const dropdownRect = dropdown.getBoundingClientRect();
-const stickyLazyLoad = stickyLazyloadWrapper.getBoundingClientRect();
-const stickyLazyGallery = lazyGallery.getBoundingClientRect();
-const stickyNavRect = stickyNav.getBoundingClientRect();
-// const offsetStickyNav = stickyNavRect.top + stickyLazyLoad.top;
-const offsetStickyNav = bodyRect.top + dropdownRect.bottom;
-
-// console.log(stickyNav.scrollTop + stickyNav.scrollLeft);
-// console.log("dropdown", dropdownRect);
-// console.log("offsetStickyNav", offsetStickyNav);
-
-const scrollTop = document.documentElement.scrollTop;
-// console.log(bodyRect.top + dropdownRect.top);
-
-// document.addEventListener("scroll", () => {
-//   console.log(stickyLazyGallery);
-//   if (
-//     document.body.scrollTop > offsetStickyNav ||
-//     document.documentElement.scrollTop > offsetStickyNav
-//   ) {
-//     stickyNav.classList.add("sticky-navigation-active");
-//   } else {
-//     stickyNav.classList.remove("sticky-navigation-active");
-//   }
-// });
-
-// window.onscroll = function () {
-//   scrollToTopTest();
-// };
-
-// function scrollToTopTest() {
-//   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-//     // stickyNav.classList.add("sticky-navigation-active");
-//     console.log("add");
-//   } else {
-//     // stickyNav.classList.remove("sticky-navigation-active");
-//     console.log("remove");
-//   }
-// }
-
-// ------------------------------------------------------------------------------------------------------------------------
+  stickyNav.addEventListener("click", () => {
+    stickyUl.classList.toggle("sticky-ul-active");
+    stickyArrow.classList.toggle("sticky-arrow-active");
+  });
+}
+openStickyNav();
 
 // Test Container for adding images dynamically
 const DynImgContainer =
@@ -257,11 +218,13 @@ function lazyLoadActivate() {
 
               // when image is done loading -> remove loadbar
               if (img.complete) {
+                console.log(img);
                 loaded();
+                img.classList.add("img-colour-active");
               } else {
                 img.addEventListener("load", loaded);
                 img.addEventListener("error", function () {
-                  alert("error");
+                  alert("error loading the image");
                 });
               }
               // https://stackoverflow.com/questions/280049/how-to-create-a-javascript-callback-for-knowing-when-an-image-is-loaded

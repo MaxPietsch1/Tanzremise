@@ -1508,9 +1508,11 @@ nav {
 
 .sticky-navigation .sticky-allshows {
   max-width: 1400px;
+  cursor: pointer;
 }
 
-.sticky-navigation .sticky-allshows h4 {
+.sticky-navigation .sticky-allshows h4,
+.sticky-navigation .sticky-allshows .sticky-allShow {
   position: relative;
   z-index: 2;
   font-size: calc(1rem + 0.2vw);
@@ -1524,11 +1526,32 @@ nav {
       -ms-flex-pack: center;
           justify-content: center;
   min-height: 5vh;
-  background: #ca3434;
+  background: #941c2f;
+}
+
+.sticky-navigation .sticky-allshows h4 .sticky-arrow,
+.sticky-navigation .sticky-allshows .sticky-allShow .sticky-arrow {
+  padding: 5px;
+  font-size: calc(1.4rem + 0.2vw);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.sticky-navigation .sticky-allshows h4 .sticky-arrow-active,
+.sticky-navigation .sticky-allshows .sticky-allShow .sticky-arrow-active {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .sticky-navigation .sticky-ul-hide {
   position: absolute;
+  cursor: default;
   padding: 2vh;
   display: -ms-grid;
   display: grid;
@@ -1538,25 +1561,34 @@ nav {
   background: #0e0e0e;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-transform: translateY(-90%);
-          transform: translateY(-90%);
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .sticky-navigation .sticky-ul-hide li {
-  padding: 10px 8px;
+  padding: 12px 8px;
   list-style: none;
   text-align: center;
 }
 
 .sticky-navigation .sticky-ul-hide li a {
-  font-size: calc(1em + 0.4vw);
+  font-size: calc(1.1em + 0.2vw);
   text-decoration: none;
+  color: #ebebeb;
+  padding: 5px;
+}
+
+.sticky-navigation .sticky-ul-hide li a:hover {
   color: white;
 }
 
-.sticky-navigation .sticky-ul-hide:hover {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+.sticky-ul-active {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  -webkit-transform: translateY(0) !important;
+          transform: translateY(0) !important;
+  background: #d3d3d3;
+  display: none;
 }
 
 .sticky-navigation-active {
@@ -1602,7 +1634,7 @@ nav {
 
 .lazyload-wrapper .lazy-images-wrapper .year-shows {
   font-family: "montserrat", sans-serif;
-  padding: 20px 0;
+  padding: 4vh 0 0;
   color: #040b12;
   background: white;
   font-size: calc(1.4rem + 0.2vw);
@@ -1620,6 +1652,7 @@ nav {
   letter-spacing: 5px;
   text-align: center;
   padding: 30px 0;
+  border-top: 4vh solid white;
 }
 
 .lazyload-wrapper .lazy-images-wrapper .lazy-images {

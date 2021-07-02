@@ -140,10 +140,10 @@
 
   .sticky-allshows {
     max-width: 1400px;
-    // position: relative;
-    // background: rgb(45, 45, 255);
-    // height: 100px;
-    h4 {
+    cursor: pointer;
+
+    h4,
+    .sticky-allShow {
       position: relative;
       z-index: 2;
       font-size: calc(1rem + 0.2vw);
@@ -151,36 +151,62 @@
       align-items: center;
       justify-content: center;
       min-height: 5vh;
-      background: $primal-color;
+      background: $primal-color2;
+
+      .sticky-arrow {
+        padding: 5px;
+        font-size: calc(1.4rem + 0.2vw);
+        transition: all 0.3s ease;
+        transform: rotate(0deg);
+        // border: 1px solid white;
+
+        // &:hover {
+        //   transform: rotate(-90deg);
+        //   transform-origin: center;
+        //   transition: all 0.3s ease;
+        // }
+      }
+      .sticky-arrow-active {
+        transform: rotate(-90deg);
+        transform-origin: center;
+        transition: all 0.3s ease;
+      }
     }
   }
 
   .sticky-ul-hide {
     position: absolute;
+    cursor: default;
     padding: 2vh;
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     background: rgb(14, 14, 14);
     transition: all 0.3s ease;
-    transform: translateY(-90%);
+    transform: translateY(-100%);
     li {
-      padding: 10px 8px;
+      padding: 12px 8px;
       list-style: none;
       text-align: center;
       a {
-        font-size: calc(1em + 0.4vw);
+        font-size: calc(1.1em + 0.2vw);
         text-decoration: none;
-        color: rgb(255, 255, 255);
+        color: rgb(235, 235, 235);
+        padding: 5px;
+        &:hover {
+          color: white;
+        }
       }
-    }
-
-    &:hover {
-      transform: translateY(0);
     }
   }
 }
 
+.sticky-ul-active {
+  transition: all 0.3s ease;
+  transform: translateY(0) !important;
+  background: #d3d3d3;
+  display: none;
+}
 .sticky-navigation-active {
   position: fixed;
   top: 0;
@@ -214,8 +240,7 @@
 
     .year-shows {
       font-family: "montserrat", sans-serif;
-      // padding: 15px 0 10px 0;
-      padding: 20px 0;
+      padding: 4vh 0 0;
       color: #040b12;
       background: white;
       font-size: $header3;
@@ -233,6 +258,7 @@
       letter-spacing: 5px;
       text-align: center;
       padding: 30px 0;
+      border-top: 4vh solid white;
     }
 
     .lazy-images {
@@ -253,6 +279,12 @@
         width: 100%;
         // max-height: 130px;
         object-fit: cover;
+        // filter: blur(1px);
+        // filter: grayscale(50%);
+      }
+      .img-colour-active {
+        // filter: blur(0px);
+        // filter: grayscale(0%);
       }
     }
   }
