@@ -9,6 +9,7 @@
   position: relative;
   background: #0e0e0e;
   padding-top: 10vh;
+  overflow-x: hidden;
 }
 
 .ewe-wrapper {
@@ -59,7 +60,8 @@
   }
   img {
     margin: 2rem auto 2rem 0;
-    width: 100vw;
+    width: 105%;
+    min-width: 500px;
     max-width: 1200px;
     pointer-events: none;
     opacity: 0.8;
@@ -101,13 +103,15 @@
       }
 
       .show-info {
+        // here
         max-width: 800px;
-        margin: auto;
+        margin: 0 auto 3vh auto;
         &:hover {
           transition: all 0.2s ease;
         }
 
         .show-name {
+          // here
           display: flex;
           justify-content: space-between;
           justify-content: center;
@@ -115,11 +119,18 @@
           padding: 10px 0 10px 3%;
           border: 1px solid #1c212a;
           border-bottom: none;
+          background-color: rgb(39, 49, 57);
+          // background-image: linear-gradient(
+          //   158deg,
+          //   rgb(39, 49, 57) 4.3%,
+          //   rgb(18, 20, 29) 96.7%
+          // );
           p {
             color: rgb(225, 225, 225);
             font-size: $paragraph;
             font-weight: 600;
             padding: 5px;
+            text-align: center;
           }
 
           .arrow-left {
@@ -134,16 +145,17 @@
         }
 
         .turn-arrow {
-          background-image: linear-gradient(
-            158deg,
-            rgb(39, 49, 57) 4.3%,
-            rgb(18, 20, 29) 96.7%
-          );
-          padding: 10px 25px;
+          // here
+          // background-image: linear-gradient(
+          //   158deg,
+          //   rgb(39, 49, 57) 4.3%,
+          //   rgb(18, 20, 29) 96.7%
+          // );
           display: flex;
           justify-content: flex-end;
           align-items: center;
-          min-height: 45px;
+          padding: 7px 25px;
+          // min-height: 45px;
 
           .show-type {
             font-size: calc(1rem + 0.2vw);

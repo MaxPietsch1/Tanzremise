@@ -45,6 +45,10 @@
     //   color: white;
   }
 }
+
+.red-ensemble {
+  color: $primal-color;
+}
 // .ensemble-hero {
 //   width: 100vw;
 //   // max-width: 1000px;
@@ -394,11 +398,11 @@
 }
 
 .cards-wrapper {
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-  margin: auto;
+  display: grid;
+  justify-items: center;
   max-width: 1150px;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  margin: auto auto 5vh;
 }
 
 // .background-squares {
@@ -417,22 +421,14 @@
   align-items: center;
   position: relative;
   max-width: 350px;
-  border-radius: 2ch;
-  // margin: 5vh 0vw;
   padding: 6rem 3rem;
-  background: linear-gradient(to right, rgb(12, 12, 12), rgb(14, 14, 14));
   transition: all 0.3s ease;
-
-  // &:hover {
-  //   transition: all 0.3s ease;
-  //   opacity: 1;
-  // }
 
   .text-titel {
     font-family: "dancing script", cursive;
     font-weight: 100;
     font-size: 40px;
-    color: $primal-color2;
+    color: $primal-color;
     padding-bottom: 15px;
     text-align: center;
   }
@@ -635,14 +631,14 @@
 @media screen and (min-width: 400px) {
   .stripe-red {
     background: $primal-color2;
-    width: 100vw;
+    width: 200vw;
     height: 30vh;
     position: absolute;
     transform: rotate(-15deg);
     pointer-events: none;
   }
   #red-two {
-    bottom: -200px;
+    bottom: -36vh;
     right: -50vw;
   }
 }

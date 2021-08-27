@@ -141,17 +141,30 @@ async function dynamicImages() {
         const lazyImages = document.createElement("div");
         lazyImages.classList.add("lazy-images");
 
+        // Images overlay
+        // const overlayImages = document.createElement("span");
+        // overlayImages.classList.add("overlay-images");
+        // overlayImages.innerHTML = "test";
+
         // Adds all images on webpages, lazyload on scroll
         showObj.imgArray.forEach((imageUrl) => {
           const imageElement = document.createElement("img");
           imageElement.classList.add("lazy");
           imageElement.setAttribute("data-src", imageUrl);
-          lazyImages.append(imageElement);
-          // console.log(imageElement);
+          lazyImages.appendChild(imageElement);
+          // console.log(overlayImages);
         });
 
         lazyImagesWrapper.append(lazyImages);
         lazyloadWrapper.append(lazyImagesWrapper);
+
+        for (var key in lazyImages) {
+          if (lazyImages.hasOwnProperty(key)) {
+            console.log(key + " -> " + lazyImages[key]);
+          }
+        }
+
+        // console.log(lazyImages);
       });
   });
 
@@ -183,13 +196,13 @@ function lazyLoadActivate() {
           img.src = img.dataset.src;
           img.classList.remove("lazy");
 
-          img.addEventListener("click", (a) => {
-            if (a.toElement.dataset.src.includes("gallery")) {
-              let withThumbnail = a.toElement.dataset.src.replace(
+          img.addEventListener("click", function () {
+            if (this.dataset.src.includes("gallery")) {
+              let withThumbnail = this.dataset.src.replace(
                 "thumbnailgallery",
                 "gallery"
               );
-              a.toElement.dataset.src = withThumbnail;
+              this.dataset.src = withThumbnail;
               img.src = img.dataset.src;
 
               const imgLoader = document.createElement("div");
@@ -218,9 +231,7 @@ function lazyLoadActivate() {
 
               // when image is done loading -> remove loadbar
               if (img.complete) {
-                console.log(img);
                 loaded();
-                img.classList.add("img-colour-active");
               } else {
                 img.addEventListener("load", loaded);
                 img.addEventListener("error", function () {

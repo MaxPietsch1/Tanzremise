@@ -42,18 +42,18 @@
       font-family: "montserrat", sans-serif;
       .txt1 {
         // font-size: calc(1.8rem + 0.1vw);
+        color: $primal-color;
         font-size: $header3;
         padding-bottom: 3px;
       }
       .txt2 {
         font-size: $paragraph;
-        color: rgb(205, 205, 205);
         letter-spacing: 0.5px;
+        color: rgb(240, 240, 240);
       }
       .txt-color,
       a {
-        color: $primal-color;
-        text-decoration: none;
+        color: rgb(240, 240, 240);
       }
     }
   }
